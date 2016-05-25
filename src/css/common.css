@@ -3,3 +3,45 @@ html,body,div
     margin: 0;
     padding: 0;
 }
+/***header 开始 ***/
+.px1__header
+{
+    height:78px;
+    background-color: #ed871b;    
+}
+.px1__header__wrapper
+{
+    position: relative;
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    /*background-color: #000000;*/              
+}
+.px1__logo
+{
+    width: 246px;
+    height: 38px;
+    background-image: url(../images/common/logo.png);
+    margin-top: -14px;
+    position: absolute;
+    left: 28px;
+    top:50%;    
+}
+/***header 结束 ***/
+/***menu 开始 ***/
+.px1__menu
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+.px1__menu__btnMenuOpen
+{
+    
+}
+
+/***menu 结束 ***/
+/***footer 开始 ***/
+/***footer 结束 ***/
+
