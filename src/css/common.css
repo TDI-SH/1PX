@@ -1,4 +1,4 @@
-html,body,div
+html,body,div,ul,li
 {
     margin: 0;
     padding: 0;
@@ -31,14 +31,35 @@ html,body,div
 /***menu 开始 ***/
 .px1__menu
 {
-    width: 100%;
     height: 100%;
     position: absolute;
+    top: 0;
     right: 0;
 }
 .px1__menu__btnMenuOpen
 {
-    
+    width: 106px;
+    height: 78px;
+    background-image: url(../images/common/btnMenuOpen.png);
+    cursor: pointer;
+}
+.px1__menu__open
+{
+    width: 357px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ed871b;          
+}
+.px1__menu__open__btnMenuClose
+{
+    width: 106px;
+    height: 78px;
+    background-image: url(../images/common/btnMenuClose.png);
+    position: absolute;
+    right: 0;
+    cursor: pointer;
 }
 
 /***menu 结束 ***/
