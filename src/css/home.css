@@ -1,0 +1,36 @@
+.home
+{
+    position: relative;
+    top:78px;
+    width: 1280px;
+    margin: 0 auto;
+    color: #000000;
+    font-family: 'Arial';
+    
+}
+.home__headline
+{
+    color: #023062;
+    font-size: 48px;
+    text-align: center;
+    line-height: 104px;           
+}
+.home__copy
+{
+    color: #435152;
+    font-size: 16px;
+    text-align: center;
+}
+.home__map
+{
+    width: 784px;
+    height: 784px;
+    border-radius: 392px;
+    background-color: #f6a833;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.home__map__wrapper
+{
+    
+}

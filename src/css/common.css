@@ -9,13 +9,12 @@ html,body,div,ul,li
 {
     position: absolute;
     width: 100%;
-    height:78px;
+    height: 78px;
     background-color: #ed871b;   
 }
 .header_transparent
 {
-    background-color: transparent;
-    border-bottom: solid 1px #ffffff;
+    background-color: transparent;    
 }
 .header__wrapper
 {
@@ -24,12 +23,16 @@ html,body,div,ul,li
     height: 100%;
     margin: 0 auto;
 }
+.header__wrapper_borderBottom
+{
+    border-bottom: solid 1px #ffffff;
+}
 .header__logo
 {
     width: 246px;
     height: 38px;
-    background-image: url(../images/common/logo.png);
     margin-top: -14px;
+    background-image: url(../images/common/logo.png);    
     position: absolute;
     left: 28px;
     top:50%;    
@@ -39,10 +42,11 @@ html,body,div,ul,li
 /***menu 开始 ***/
 .menu
 {
+    width: 100%;
     height: 100%;
     position: absolute;
-    top: 0;
     right: 0;
+    top: 0;
 }
 .menu__btnMenuOpen
 {
@@ -50,13 +54,14 @@ html,body,div,ul,li
     height: 78px;
     background-image: url(../images/common/btnMenuOpen.png);
     cursor: pointer;
+    position: absolute;
+    right: 0;
 }
 .menu__open
 {
     width: 357px;
     height: 100%;
     position: absolute;
-    top: 0;
     right: 0;
     background-color: #ed871b;
     display: none;       
