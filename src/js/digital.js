@@ -48,6 +48,13 @@ $('.content__rightBtn').mouseout(function(){
 var a = new Array();
 var currentPot;
 var width=$(window).width();
+var copyRight=parseInt($(".bottomNav__itemCopy").css('right'));
+var arrowRight=parseInt($(".bottomNav__itemArrow").css('right'));
+var step=52;
+if(width<=1024){
+	step=33;
+}
+var copys=["Taiwan Spring <br/>Fashion Campaign","HongKong Spring <br/>Fashion Campaign","Korea Spring <br/>Fashion Campaign","Japan Spring <br/>Fashion Campaign"]
 setInterval(function(){
 	width=$(window).width();
 	$("[class^=content__bg]").show();
@@ -63,68 +70,51 @@ setInterval(function(){
 			currentPot=i;
 		}
 	}
-	console.log(a[0]+"--"+a[1]+"--"+a[2]+"--"+a[3]);
 	$(".content__bg1").animate({'left':a[0]},1500);
 	$(".content__bg2").animate({'left':a[1]},1500);
 	$(".content__bg3").animate({'left':a[2]},1500);
-	$(".content__bg4").animate({'left':a[3]},1500,function(){
-
-		$(".bottomNav__itemCopy").css({'right':56-(currentPot-1)*36});
-		$(".bottomNav__itemArrow").css({'right':95-(currentPot-1)*36});
-	});
-	
+	$(".content__bg4").animate({'left':a[3]},1500);
 	$(".bottomNav__itemCircle div").removeClass('active');
 	$(".bottomNav__itemCircle").children().eq(currentPot-1).addClass('active');
+	changeCopy(currentPot);
+	$(".bottomNav__itemArrow").css({'right':arrowRight-(currentPot-1)*step});
 
-},7000);
+},3000);
 	 
-//$("#circle1").click(function(){
-//	$(".bottomNav__itemCircle div").removeClass();
-//	$(".bottomNav__itemCircle").children().eq(0).addClass('active');
-//	$(".bottomNav__itemCopy").css({'right':56});
-//	$(".bottomNav__itemArrow").css({'right':95});
-//	$(".content__bg1").css({'left':0});
-//	$(".content__bg2").css({'left':width});
-//	$(".content__bg3").css({'left':-2*width});
-//	$(".content__bg4").css({'left':-1*width});
-//});
 
 $(function(){
 	$(".circle").each(function(index,item){
 		$(this).click(function(){
-			var j=index+1;
+			currentPot=index+1;
 			$(".circle").removeClass('active');
 			$(this).addClass('active');
-			$(".bottomNav__itemCopy").css({'right':56-index*36});
-			$(".bottomNav__itemArrow").css({'right':95-index*36});
+			changeCopy(currentPot);
+			$(".bottomNav__itemArrow").css({'right':arrowRight-(currentPot-1)*step});
 			
-			switch(j){
-				case 1:
-					a=[0,width,-2*width,-1*width];	
-					break;
-				case 2:
-					a=[-1*width,0,width,-2*width];	
-					break;
-				case 3:
-					a=[-2*width,-1*width,0,width];
-					break;
-				case 4:
-					a=[width,-2*width,-1*width,0];
-					break;
-			}
-			
-			$(".content__bg1").css({'left':a[0]});
-			$(".content__bg2").css({'left':a[1]});
-			$(".content__bg3").css({'left':a[2]});
-			$(".content__bg4").css({'left':a[3]});
-			
+			modifyBgPosition(currentPot,width);
 			
 		})
 	})
 });
 
 	
+window.addEventListener("resize", function(){
 	
+	width=$(window).width();
+	step=52;
+	if(width<=1024){
+		step=33;
+		copyRight=50;
+		arrowRight=93;
+		console.log("qqqq");
+	}else{
+		copyRight=106;
+		arrowRight=145;
+	}
+	
+	console.log(copyRight);
+	modifyBgPosition(currentPot,width);
+});	
 	
 	
 	
@@ -140,9 +130,36 @@ $(function(){
 	
 //函数***************************************************************************************************************************************************************		
 	
+function changeCopy(index){
+	$(".bottomNav__itemCopy").css({'right':copyRight-(index-1)*step});
+	$(".bottomNav__itemCopy").html(copys[index-1]);
+}
 	
-	
-	
+function modifyBgPosition(currentPot,windowWidth){
+	switch(currentPot){
+		case 1:
+			a=[0,windowWidth,-2*windowWidth,-1*windowWidth];	
+			break;
+		case 2:
+			a=[-1*windowWidth,0,windowWidth,-2*windowWidth];	
+			break;
+		case 3:
+			a=[-2*windowWidth,-1*windowWidth,0,windowWidth];
+			break;
+		case 4:
+			a=[windowWidth,-2*windowWidth,-1*windowWidth,0];
+			break;
+	}
+	$(".content__bg1").stop(true,true);
+	$(".content__bg2").stop(true,true);
+	$(".content__bg3").stop(true,true);
+	$(".content__bg4").stop(true,true);
+	$("[class^=content__bg]").show();
+	$(".content__bg1").css({'left':a[0]});
+	$(".content__bg2").css({'left':a[1]});
+	$(".content__bg3").css({'left':a[2]});
+	$(".content__bg4").css({'left':a[3]});
+}
 	
 	
 	

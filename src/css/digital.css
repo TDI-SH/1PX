@@ -53,7 +53,7 @@ html{
 	top: 0px;
 	width: 100%;
 	height: 100%;
-	background-image: url(../images/service/digital/no_bg.jpg);
+	background-image: url(../images/service/digital/bg.jpg);
 	background-size:cover ;
 	background-repeat: no-repeat;
 	background-position: center center; 	
@@ -131,11 +131,11 @@ html{
 	cursor: pointer;
 	z-index: 999;
 	float: left;
-	margin-left: 30px;
-	width: 4px;
-	height: 4px;
-	border: 1px solid white;
-	border-radius: 3px;
+	margin-left: 40px;
+	width: 7px;
+	height: 7px;
+	border: 2px solid white;
+	border-radius: 6px;
 	background-color: white;
 }
 
@@ -146,18 +146,19 @@ html{
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	position: absolute;
-	right: 95px;
+	right: 145px;
 	top: 30px;
-	display: none !important;   
+/*	display: none !important;   */
 }
 
 .bottomNav__itemCopy{
     position: absolute;
-    top: 0px;
-    right: 56px;
+    top: -3px;
+    right: 106px;
     text-align: center;
     color: white;
-    display: none !important;
+    font-size: small;
+/*    display: none !important;*/
 }
 
 .active{
@@ -167,7 +168,51 @@ html{
 
 
 
+@media screen and (max-width: 1024px ) {
+		
+.bottomNav__itemCircle div{	
+	cursor: pointer;
+	z-index: 999;
+	float: left;
+	margin-left: 25px;
+	width: 4px;
+	height: 4px;
+	border: 2px solid white;
+	border-radius: 4px;
+	background-color: white;
+}	
 
+.bottomNav__itemArrow{
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/service/digital/arrow_up.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	position: absolute;
+	right: 93px;
+	top: 40px;
+/*	display: none !important;   */
+}
+
+.bottomNav__itemCopy{
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    text-align: center;
+    color: white;
+    font-size: .1vw;
+/*    display: none !important;*/
+}
+
+
+
+
+
+
+
+
+
+}
 
 
 
