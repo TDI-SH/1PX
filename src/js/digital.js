@@ -79,7 +79,7 @@ setInterval(function(){
 	changeCopy(currentPot);
 	$(".bottomNav__itemArrow").css({'right':arrowRight-(currentPot-1)*step});
 
-},3000);
+},7000);
 	 
 
 $(function(){
