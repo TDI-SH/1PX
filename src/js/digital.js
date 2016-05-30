@@ -51,6 +51,8 @@ var width=$(window).width();
 var copyRight=parseInt($(".bottomNav__itemCopy").css('right'));
 var arrowRight=parseInt($(".bottomNav__itemArrow").css('right'));
 var step=52;
+var pictureBefore;
+var isRedirected=false;
 if(width<=1024){
 	step=33;
 }
@@ -70,24 +72,30 @@ setInterval(function(){
 			currentPot=i;
 		}
 	}
-	$(".content__bg1").animate({'left':a[0]},1500);
-	$(".content__bg2").animate({'left':a[1]},1500);
-	$(".content__bg3").animate({'left':a[2]},1500);
-	$(".content__bg4").animate({'left':a[3]},1500);
-	$(".bottomNav__itemCircle div").removeClass('active');
-	$(".bottomNav__itemCircle").children().eq(currentPot-1).addClass('active');
-	changeCopy(currentPot);
-	$(".bottomNav__itemArrow").css({'right':arrowRight-(currentPot-1)*step});
+	if(isRedirected==false){
+		$(".content__bg1").animate({'left':a[0]},1500);
+		$(".content__bg2").animate({'left':a[1]},1500);
+		$(".content__bg3").animate({'left':a[2]},1500);
+		$(".content__bg4").animate({'left':a[3]},1500);
+		$(".bottomNav__itemCircle div").removeClass('active');
+		$(".bottomNav__itemCircle").children().eq(currentPot-1).addClass('active');
+		changeCopy(currentPot);
+		$(".bottomNav__itemArrow").css({'right':arrowRight-(currentPot-1)*step});
+	}
+	isRedirected=false;
+
 
 },7000);
 	 
 
 $(function(){
-	$(".circle").each(function(index,item){
+	$(".coverBtn").each(function(index,item){
 		$(this).click(function(){
+			isRedirected=true;
+			pictureBefore=currentPot;
 			currentPot=index+1;
 			$(".circle").removeClass('active');
-			$(this).addClass('active');
+			$(".bottomNav__itemCircle").children().eq(currentPot-1).addClass('active');
 			changeCopy(currentPot);
 			$(".bottomNav__itemArrow").css({'right':arrowRight-(currentPot-1)*step});
 			
@@ -134,7 +142,8 @@ function changeCopy(index){
 	$(".bottomNav__itemCopy").css({'right':copyRight-(index-1)*step});
 	$(".bottomNav__itemCopy").html(copys[index-1]);
 }
-	
+		
+		
 function modifyBgPosition(currentPot,windowWidth){
 	switch(currentPot){
 		case 1:
@@ -159,13 +168,7 @@ function modifyBgPosition(currentPot,windowWidth){
 	$(".content__bg2").css({'left':a[1]});
 	$(".content__bg3").css({'left':a[2]});
 	$(".content__bg4").css({'left':a[3]});
-}
-	
-	
-	
-	
-	
-	
+}	
 	
 	
 	
