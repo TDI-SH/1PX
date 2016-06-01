@@ -42,11 +42,12 @@ html,body,div,ul,li
 /***menu 开始 ***/
 .menu
 {
-    width: 100%;
+    width: 357px;
     height: 100%;
     position: absolute;
     right: 0;
     top: 0;
+    z-index: 10;
 }
 .menu__btnMenuOpen
 {

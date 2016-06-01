@@ -20,6 +20,17 @@
     color: #435152;
     font-size: 16px;
     text-align: center;
+    line-height: 25px;
+    height: 50px;
+}
+.home__bg{
+    width: 1283px;
+    height: 734px;
+    background: url(../images/home/bg.png) no-repeat;
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    margin-left: -642px;
 }
 .home__map
 {
@@ -29,8 +40,15 @@
     background-color: #f6a833;
     overflow: hidden;
     margin: 0 auto;
+    margin-top: 30px;
+    position: relative;
 }
 .home__map__wrapper
 {
-    
+    width: 1551px;
+    height: 733px;
+    position: absolute;
+    background: url(../images/home/map.png) no-repeat;
+    top: 33px;
+    left: -750px;
 }
