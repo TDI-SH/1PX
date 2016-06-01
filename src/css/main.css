@@ -1,0 +1,262 @@
+@charset "UTF-8";
+/* CSS Document */
+html, body {
+  font-size: 12px;
+  font-family: Arial;
+  line-height: 18px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body, form, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6, img, div, span, input, textarea, tr, td, th, caption {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body li {
+  list-style: none;
+}
+
+body a {
+  text-decoration: none;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  star: expression(this.onFocus=this.blur());
+  /*让加载样式时同时加载js事件*/
+}
+
+a:focus {
+  outline: 0;
+  /*兼容火狐浏览器*/
+}
+
+body img {
+  border: none;
+}
+
+.clearfix {
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  border: 0;
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  min-width: 1280px;
+  min-height: 872px;
+}
+
+.department-sprite, #department section.section-1 .arrow, #department section.section-2 .arrow, #department section.section-3 .arrow, #department section.section-4 .arrow {
+  background-image: url('../images/sprite-department.png');
+  background-repeat: no-repeat;
+}
+
+#department {
+  width: 1280px;
+  height: 794px;
+  position: relative;
+  overflow: hidden;
+  left: 50%;
+  margin-left: -640px;
+  top: 78px;
+}
+#department section {
+  float: left;
+  position: relative;
+}
+#department section.section-1 {
+  width: 639px;
+  height: 397px;
+  background-image: url('../images/service/department/or_1.jpg');
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+#department section.section-1 .btm-txt {
+  width: 130px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 17px;
+  line-height: 40px;
+  text-align: center;
+  font-style: italic;
+  color: #fff;
+  display: none;
+}
+#department section.section-1 .arrow {
+  background-position: 0 0;
+  height: 28px;
+  width: 14px;
+  position: absolute;
+  top: 190px;
+  display: none;
+  left: 367px;
+}
+#department section.section-1 .bord {
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 217px;
+  display: none;
+  width: 74px;
+  left: 284px;
+}
+#department section.section-1.hover {
+  background-image: url('../images/service/department/or_1_hover.jpg');
+  background-repeat: no-repeat;
+}
+#department section.section-1.hover .btm-txt, #department section.section-1.hover .arrow, #department section.section-1.hover .bord {
+  display: block;
+}
+#department section.section-2 {
+  width: 639px;
+  height: 397px;
+  background-image: url('../images/service/department/or_2.jpg');
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+#department section.section-2 .btm-txt {
+  width: 130px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 17px;
+  line-height: 40px;
+  text-align: center;
+  font-style: italic;
+  color: #fff;
+  display: none;
+}
+#department section.section-2 .arrow {
+  background-position: 0 0;
+  height: 28px;
+  width: 14px;
+  position: absolute;
+  top: 190px;
+  display: none;
+  left: 367px;
+}
+#department section.section-2 .bord {
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 217px;
+  display: none;
+  width: 74px;
+  left: 282px;
+}
+#department section.section-2.hover {
+  background-image: url('../images/service/department/or_2_hover.jpg');
+  background-repeat: no-repeat;
+}
+#department section.section-2.hover .btm-txt, #department section.section-2.hover .arrow, #department section.section-2.hover .bord {
+  display: block;
+}
+#department section.section-3 {
+  width: 639px;
+  height: 397px;
+  background-image: url('../images/service/department/or_3.jpg');
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+#department section.section-3 .btm-txt {
+  width: 130px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 17px;
+  line-height: 40px;
+  text-align: center;
+  font-style: italic;
+  color: #fff;
+  display: none;
+}
+#department section.section-3 .arrow {
+  background-position: 0 0;
+  height: 28px;
+  width: 14px;
+  position: absolute;
+  top: 190px;
+  display: none;
+  left: 386px;
+}
+#department section.section-3 .bord {
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 217px;
+  display: none;
+  width: 113px;
+  left: 264px;
+}
+#department section.section-3.hover {
+  background-image: url('../images/service/department/or_3_hover.jpg');
+  background-repeat: no-repeat;
+}
+#department section.section-3.hover .btm-txt, #department section.section-3.hover .arrow, #department section.section-3.hover .bord {
+  display: block;
+}
+#department section.section-4 {
+  width: 639px;
+  height: 397px;
+  background-image: url('../images/service/department/or_4.jpg');
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+#department section.section-4 .btm-txt {
+  width: 130px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 17px;
+  line-height: 40px;
+  text-align: center;
+  font-style: italic;
+  color: #fff;
+  display: none;
+}
+#department section.section-4 .arrow {
+  background-position: 0 0;
+  height: 28px;
+  width: 14px;
+  position: absolute;
+  top: 190px;
+  display: none;
+  left: 403px;
+}
+#department section.section-4 .bord {
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 217px;
+  display: none;
+  width: 149px;
+  left: 244px;
+}
+#department section.section-4.hover {
+  background-image: url('../images/service/department/or_4_hover.jpg');
+  background-repeat: no-repeat;
+}
+#department section.section-4.hover .btm-txt, #department section.section-4.hover .arrow, #department section.section-4.hover .bord {
+  display: block;
+}
+#department section p {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 397px;
+  color: #fff;
+  font-size: 25px;
+}
