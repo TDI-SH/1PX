@@ -1,0 +1,141 @@
+
+.about
+{    
+    position: absolute;
+    width: 1280px;
+    margin-left: -640px;
+    top: 78px;
+    left: 50%;
+    height: calc(100% - 78px);
+    font-family: "Helvetica";
+    font-weight: lighter;
+    /*border: solid black 1px;*/
+}
+
+/*** 卡片 开始 ***/
+.about__cards__wrapper
+{    
+    position: absolute;
+    width: 1060px;
+    height: 725px;/*724.5px=630x1.15>630*/
+    margin-top: -315px;/*315=630x0.5*/
+    left: 110px;
+    top: calc(50% - 90px);/*90=about__card__title的高度x0.5*/
+    overflow: hidden;
+    /*border: solid #00ff00 1px;*/
+}
+.about__cards
+{
+    position: absolute;
+    left: 0px;   
+}
+.about__card
+{
+    position: absolute;
+    width: 320px;
+}
+.about__card__title
+{
+    color: #004174;
+    font-size: 48px;
+    text-align: center;
+    height: 180px;
+    line-height: 180px;
+}
+.about__card__content
+{
+    width: 318px;/*318=320-2*/
+    height: 448px;/*448=450-2*/
+    border-radius: 2px;
+    border: solid #ed871b 1px;      
+}
+.about__card__content__img
+{
+    margin: 35px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    overflow: hidden;     
+}
+.about__card__content__img>img
+{
+    width: 100%;
+}
+.about__card__content__headline
+{
+    color: #a3a6a9;
+    font-size: 20px;
+    text-align: center; 
+    height: 100px;  
+}
+.about__card__content__btnReadMore
+{
+    color: #ffffff;    
+    font-size: 20px;
+    text-align: center;
+    line-height: 56px;
+    width: 200px;
+    height: 56px;
+    border-radius: 56px;
+    background-color: #ed871b;
+    margin: 0 auto;   
+}
+
+.about__cards>div:nth-child(1)
+{
+    left: 0px;    
+}
+.about__cards>div:nth-child(2)
+{
+    left: 370px;    
+}
+.about__cards>div:nth-child(3)
+{
+    left: 740px;    
+}
+.about__cards>div:nth-child(4)
+{
+    left: 1110px;    
+}
+.about__cards>div:nth-child(5)
+{
+    left: 1480px;    
+}
+.about__cards>div:nth-child(6)
+{
+    left: 1850px;    
+}
+.about__cards>div:nth-child(7)
+{
+    left: 2220px;    
+}
+
+/*** 卡片 结束 ***/
+/*** 左右切换按钮 开始 ***/
+.about__btnLeft
+{
+    cursor: pointer;
+    position: absolute;    
+    width: 110px;
+    height: 110px;
+    margin-top: -55px;
+    left: 0;
+    top: 50%;   
+    background-repeat: no-repeat;
+    background-image: url(../images/common/btnLeft.png);
+    background-position: 15px center;
+}
+.about__btnRight
+{
+    cursor: pointer;
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    margin-top: -55px;
+    right: 0;
+    top: 50%;
+    background-repeat: no-repeat;
+    background-image: url(../images/common/btnRight.png);
+    background-position: 49px center;    
+}
+/*** 左右切换按钮 结束 ***/
