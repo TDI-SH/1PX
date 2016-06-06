@@ -27,7 +27,7 @@
 .about__cards
 {
     position: absolute;
-    left: 0px;   
+    left: 0px;    
 }
 .about__card
 {
@@ -78,7 +78,8 @@
     height: 56px;
     border-radius: 56px;
     background-color: #ed871b;
-    margin: 0 auto;   
+    margin: 0 auto;
+    cursor: pointer;  
 }
 
 .about__cards>div:nth-child(1)
@@ -111,6 +112,113 @@
 }
 
 /*** 卡片 结束 ***/
+/*** 详细信息 开始 ***/
+.about__details__wrapper
+{
+    position: absolute;
+    width: 1058px;
+    height: calc(100% - 80px);
+    left: 110px;
+    top: 40px;
+    border-radius: 2px;
+    border: solid #ed871b 1px;
+    background-color: #ffffff;  
+}
+.about__details
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;        
+}
+.about__detail
+{
+    position: absolute;
+    height: 100%;
+}
+.about__detail>img
+{
+    width: 100%;
+    display: block;
+    height: 265px;
+}
+.about__detail__headline
+{
+    color: #ffffff;
+    font-size: 24px;
+    position: absolute;
+    top: 110px;
+    left: 440px; 
+}
+.about__detail__headline>span
+{
+    font-size: 42px;        
+}
+.about__detail__content
+{
+    color: #909090;
+    font-size: 18px;
+    height: calc(100% - 265px);
+    overflow-y: scroll;
+}
+.about__detail__content>h2
+{    
+    font-size: 28px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 30px;    
+}
+.about__detail__content span
+{
+    color: #494949;       
+}
+.about__detail__content>p
+{
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 20px; 
+}
+
+.about__details>div:nth-child(1)
+{
+    left: 0px;    
+}
+.about__details>div:nth-child(2)
+{
+    left: 1060px;    
+}
+.about__details>div:nth-child(3)
+{
+    left: 2120px;    
+}
+.about__details>div:nth-child(4)
+{
+    left: 3180px;    
+}
+.about__details>div:nth-child(5)
+{
+    left: 5300px;    
+}
+.about__details>div:nth-child(6)
+{
+    left: 6360px;    
+}
+.about__details>div:nth-child(7)
+{
+    left: 7420px;    
+}
+
+.about__detail__btnClose
+{
+    cursor: pointer;
+    position: absolute;    
+    width: 50px;
+    height: 50px;
+    top: 0;
+    right: 0;  
+    background-image: url(../images/common/btnClose.png);
+}
+/*** 详细信息 结束 ***/
 /*** 左右切换按钮 开始 ***/
 .about__btnLeft
 {
@@ -124,6 +232,7 @@
     background-repeat: no-repeat;
     background-image: url(../images/common/btnLeft.png);
     background-position: 15px center;
+    z-index: 7890;
 }
 .about__btnRight
 {
@@ -136,6 +245,9 @@
     top: 50%;
     background-repeat: no-repeat;
     background-image: url(../images/common/btnRight.png);
-    background-position: 49px center;    
+    background-position: 49px center; 
+    z-index: 7890;   
 }
 /*** 左右切换按钮 结束 ***/
+
+
