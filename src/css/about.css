@@ -4,8 +4,8 @@
     position: absolute;
     width: 1280px;
     margin-left: -640px;
-    top: 78px;
     left: 50%;
+    top: 78px;
     height: calc(100% - 78px);
     font-family: "Helvetica";
     font-weight: lighter;
@@ -37,7 +37,7 @@
 .about__card__title
 {
     color: #004174;
-    font-size: 48px;
+    font-size: 38px;
     text-align: center;
     height: 180px;
     line-height: 180px;
@@ -51,10 +51,11 @@
 }
 .about__card__content__img
 {
-    margin: 35px auto;
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
+    font-size: 20px;
+    margin: 1.75em auto;
+    width: 10em;
+    height: 10em;
+    border-radius: 5em;
     overflow: hidden;     
 }
 .about__card__content__img>img
@@ -66,17 +67,17 @@
     color: #a3a6a9;
     font-size: 20px;
     text-align: center; 
-    height: 100px;  
+    height: 5em;
 }
 .about__card__content__btnReadMore
 {
     color: #ffffff;    
     font-size: 20px;
     text-align: center;
-    line-height: 56px;
-    width: 200px;
-    height: 56px;
-    border-radius: 56px;
+    width: 10em;
+    line-height: 2.8em;
+    height: 2.8em;    
+    border-radius: 2.8em;
     background-color: #ed871b;
     margin: 0 auto;
     cursor: pointer;  
@@ -122,7 +123,9 @@
     top: 40px;
     border-radius: 2px;
     border: solid #ed871b 1px;
-    background-color: #ffffff;  
+    background-color: #ffffff;
+    overflow: hidden;
+    display: none;
 }
 .about__details
 {
@@ -134,6 +137,7 @@
 .about__detail
 {
     position: absolute;
+    width: 100%;
     height: 100%;
 }
 .about__detail>img
@@ -197,16 +201,17 @@
 }
 .about__details>div:nth-child(5)
 {
-    left: 5300px;    
+    left: 4240px;    
 }
 .about__details>div:nth-child(6)
 {
-    left: 6360px;    
+    left: 5300px;    
 }
 .about__details>div:nth-child(7)
 {
-    left: 7420px;    
+    left: 6360px;    
 }
+
 
 .about__detail__btnClose
 {
@@ -215,8 +220,9 @@
     width: 50px;
     height: 50px;
     top: 0;
-    right: 0;  
+    right: 0; 
     background-image: url(../images/common/btnClose.png);
+    z-index: 7891;
 }
 /*** 详细信息 结束 ***/
 /*** 左右切换按钮 开始 ***/
@@ -229,10 +235,9 @@
     margin-top: -55px;
     left: 0;
     top: 50%;   
-    background-repeat: no-repeat;
-    background-image: url(../images/common/btnLeft.png);
+    background: url(../images/common/btnLeft.png) no-repeat;
     background-position: 15px center;
-    z-index: 7890;
+    z-index: 7891;
 }
 .about__btnRight
 {
@@ -242,12 +247,90 @@
     height: 110px;
     margin-top: -55px;
     right: 0;
-    top: 50%;
-    background-repeat: no-repeat;
-    background-image: url(../images/common/btnRight.png);
-    background-position: 49px center; 
-    z-index: 7890;   
+    top: 50%;    
+    background: url(../images/common/btnRight.png) no-repeat;
+    background-position: 49px center;
+    z-index: 7891;  
 }
 /*** 左右切换按钮 结束 ***/
+
+
+
+@media screen and (max-width:480px)
+{
+    .about
+    {
+        width: 100%;
+        margin-left: 0;
+        left: 0;
+        top: 40px;
+        height: calc(100% - 40px);
+    }
+    .about__cards__wrapper
+    {
+        font-size: 10px;
+        width: 100%;
+        height: 31.51em;/*27.4x1.15=31.51*/
+        margin-top: -13.7em;
+        left: 0;
+        top: calc(50% - 2.5em);
+    }
+    .about__cards
+    {
+        width: 70%;
+        height: 100%;
+        left: 15%;
+    }
+    .about__card
+    {        
+        height: 100%;        
+        width: 100%;    
+    }      
+    .about__card__title
+    {
+        font-size: 10px;
+        height: 5em;
+        line-height: 5em;            
+    }
+    .about__card__content
+    {
+        width: calc(100% - 2px);
+        font-size: 10px;
+        height: 22.4em;/*1.75+1.75+10+5+2.8+1;*/
+    }
+    .about__card__content__img
+    {
+        font-size: 10px;
+    }
+    .about__card__content__headline
+    {
+        font-size: 10px; 
+    }
+    .about__card__content__btnReadMore
+    {
+        font-size: 10px; 
+    }
+    
+    .about__btnLeft
+    {
+        width: 10vw;
+        height: 20vw;
+        margin-top: -10vw;
+        background-position: center center;
+        background-size: 7vw 14vw;/*89/46约等于2*/  
+        
+    }
+    .about__btnRight
+    {
+        width: 10vw;
+        height: 20vw;
+        margin-top: -10vw;
+        background-position: center center;
+        background-size: 7vw 14vw;        
+    }
+    
+    
+    
+}
 
 
