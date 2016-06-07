@@ -35,8 +35,60 @@
         <div class="home__copy">Tag is a global brand services company that delivers value by working with clients and their strategic partners<br>to implement marketing communications, creatively and efficiently.</div>
         <div class="home__bg"></div>
         <div class="home__map">
-            <div class="home__map__wrapper" id="home-map">
-                 
+            <div class="home__map__wrapper" id="home-map" style="left: -750px;">
+                <!-- sh -->
+                <div class="sh-icon icon"></div>
+                <div class="sh-pop city-pop">
+                    <div class="pop-txt">
+                        <p class="title">Shanghai</p>
+                        <p class="main">Unit 201-202 Building D, <br>Red Town 570 <br>Huai Hai Xi Road <br>Shanghai P.R. China,</p>
+                    </div>
+                    <div class="pop-btn"></div>
+                </div>
+
+                <!-- Singapore -->
+                <div class="sg-icon icon"></div>
+                <div class="sg-pop city-pop">
+                    <div class="pop-txt">
+                        <p class="title">Singapore</p>
+                        <p class="main">Tag Singapore Pte Ltd <br>77 Robinson Road <br>#11-03 Robinson77 <br>Singapore 068896</p>
+                    </div>
+                </div>
+
+                <!-- Hong Kong -->
+                <div class="hk-icon icon"></div>
+                <div class="hk-pop city-pop">
+                    <div class="pop-txt">
+                        <p class="title">Hong Kong</p>
+                        <p class="main">Suite 405-07, 4/F, <br>Harcourt House <br>39 Gloucester Road, <br>Wanchai <br>Hong Kong</p>
+                    </div>
+                </div>
+
+                <!-- New York -->
+                <div class="ny-icon icon"></div>
+                <div class="ny-pop city-pop">
+                    <div class="pop-txt">
+                        <p class="title">New York</p>
+                        <p class="main">1212 Avenue of the Ameri <br>cas Suite 1701 <br>New York, NY 10036 <br><br>75 Spring Street,  <br>3rd Floor New York, <br>NY 10012 USA<br><br>381 Park Avenue South <br>5th Floor <br>New York, NY</p>
+                    </div>
+                </div>
+
+                <!-- London HQ -->
+                <div class="ld-cion icon"></div>
+                <div class="ld-pop city-pop">
+                    <div class="pop-txt">
+                        <p class="title">London HQ</p>
+                        <p class="main">Aldgate Tower, <br>12th Floor, <br>2 Leman Street, <br>London, E1 8FA <br>United Kingdom</p>
+                        <p class="title">London</p>
+                        <p class="main">1 - 5 Poland Street <br>London  <br>W1F 8PR <br>United Kingdom</p>
+                        <p class="title">London</p>
+                        <p class="main">68 St John Street <br>London  <br>EC1M 4AS <br>United Kingdom</p>
+                        <p class="title">London</p>
+                        <p class="main">53-55 Beak Street, <br>London, <br>W1F 9SJ <br>United Kingdom</p>
+                        <p class="title">London</p>
+                        <p class="main">29 St John's Lane <br>London <br>EC1M 4NA <br>United Kingdom</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -44,10 +96,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/plugins/CSSPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/easing/EasePack.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenLite.min.js"></script>
+    <!-- <script src="js/jquery-2.1.4.min.js"></script> -->
+    <script src="js/hammer.min.js"></script>
+
     <script src="js/common.js"></script>
 </body>
 </html>
 <script>
-    
-    
+    // $(function(){
+    //     iconInit();
+    // })
+
+    // function iconInit(){
+    //     $('.icon').each(function(index,item){
+    //         $(this).mouseenter(function(event) {
+    //             console.log(index);
+    //             $('.city-pop').hide();
+    //             $('.city-pop').eq(index).fadeIn();
+    //         });
+    //     })
+    // }
+
+    var mapId = document.getElementById('home-map');
+    var hammertime = new Hammer(mapId);
+    hammertime.on('pan', function(ev) {
+        var startLocation = parseInt(mapId.style.left);
+        var moveX = parseInt(ev.deltaX/20);
+        // console.log(moveX);
+
+        if(startLocation>20){
+            startLocation = 20;
+            // mapId.style.left = '20px';
+        }else if(startLocation<-770){
+            // startLocation = -770;
+            mapId.style.left = '-770px';
+        }else{
+            mapId.style.left=startLocation+moveX+'px';
+        }
+        
+        // mapId.style.left=startLocation+moveX+'px';
+    });
 </script>
+
+
+

@@ -13,7 +13,14 @@
     color: #023062;
     font-size: 48px;
     text-align: center;
-    line-height: 104px;           
+    line-height: 104px;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
 }
 .home__copy
 {
@@ -22,6 +29,13 @@
     text-align: center;
     line-height: 25px;
     height: 50px;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
 }
 .home__bg{
     width: 1283px;
@@ -51,4 +65,242 @@
     background: url(../images/home/map.png) no-repeat;
     top: 33px;
     left: -750px;
+    cursor: pointer;
 }
+/*shanghai*/
+.home__map__wrapper .sh-icon{
+    width: 21px;
+    height: 21px;
+    background: url(../images/home/icon-sh.png) no-repeat;
+    position: absolute;
+    top: 343px;
+    left: 1253px;
+    cursor: pointer;
+    z-index: 2;
+}
+.home__map__wrapper .sh-pop{
+    width: 310px;
+    height: 368px;
+    background: url(../images/home/pop-sh.png) no-repeat;
+    position: absolute;
+    top: 60px;
+    left: 1196px;
+    display: none;
+    z-index: 1;
+}
+.home__map__wrapper .sh-pop .pop-txt{
+    width: 165px;
+    height: 119px;
+    position: absolute;
+    top: 105px;
+    left: 70px;
+    color: #023062;
+}
+.home__map__wrapper .sh-pop .pop-txt p.title{
+    width: 165px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.home__map__wrapper .sh-pop .pop-txt p.main{
+    width: 165px;
+    height: auto;
+    font-size: 14px;
+    line-height: 16px;
+}
+.home__map__wrapper .sh-pop .pop-btn{
+    width: 182px;
+    height: 40px;
+    background: url(../images/home/pop-btn.png) no-repeat;
+    position: absolute;
+    top: 224px;
+    left: 61px;
+    cursor: pointer;
+}
+/*Singapore*/
+.home__map__wrapper .sg-icon{
+    width: 12px;
+    height: 12px;
+    background: url(../images/home/pop-icon.png) no-repeat;
+    position: absolute;
+    top: 472px;
+    left: 1178px;
+    z-index: 2;
+    cursor: pointer;
+}
+.home__map__wrapper .sg-pop{
+    width: 310px;
+    height: 321px;
+    background: url(../images/home/pop-sg.png) no-repeat;
+    position: absolute;
+    top: 231px;
+    left: 1115px;
+    display: none;
+    z-index: 1;
+}
+.home__map__wrapper .sg-pop .pop-txt{
+    width: 165px;
+    height: 119px;
+    position: absolute;
+    top: 105px;
+    left: 70px;
+    color: #023062;
+}
+.home__map__wrapper .sg-pop .pop-txt p.title{
+    width: 165px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.home__map__wrapper .sg-pop .pop-txt p.main{
+    width: 165px;
+    height: auto;
+    font-size: 14px;
+    line-height: 16px;
+}
+/*Hong Kong*/
+.home__map__wrapper .hk-icon{
+    width: 12px;
+    height: 12px;
+    background: url(../images/home/pop-icon.png) no-repeat;
+    position: absolute;
+    top: 381px;
+    left: 1216px;
+    z-index: 2;
+    cursor: pointer;
+}
+.home__map__wrapper .hk-pop{
+    width: 310px;
+    height: 321px;
+    background: url(../images/home/pop-hk.png) no-repeat;
+    position: absolute;
+    top: 140px;
+    left: 1153px;
+    display: none;
+    z-index: 1;
+}
+.home__map__wrapper .hk-pop .pop-txt{
+    width: 165px;
+    height: 119px;
+    position: absolute;
+    top: 105px;
+    left: 70px;
+    color: #023062;
+}
+.home__map__wrapper .hk-pop .pop-txt p.title{
+    width: 165px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.home__map__wrapper .hk-pop .pop-txt p.main{
+    width: 165px;
+    height: auto;
+    font-size: 14px;
+    line-height: 16px;
+}
+/*New York*/
+.home__map__wrapper .ny-icon{
+    width: 12px;
+    height: 12px;
+    background: url(../images/home/pop-icon.png) no-repeat;
+    position: absolute;
+    top: 278px;
+    left: 454px;
+    z-index: 2;
+    cursor: pointer;
+}
+.home__map__wrapper .ny-pop{
+    width: 310px;
+    height: 368px;
+    background: url(../images/home/pop-ny.png) no-repeat;
+    position: absolute;
+    top: -10px;
+    left: 392px;
+    display: none;
+    z-index: 1;
+}
+.home__map__wrapper .ny-pop .pop-txt{
+    width: 165px;
+    height: 160px;
+    position: absolute;
+    top: 105px;
+    left: 70px;
+    color: #023062;
+    overflow: auto;
+}
+.home__map__wrapper .ny-pop .pop-txt p.title{
+    width: 165px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.home__map__wrapper .ny-pop .pop-txt p.main{
+    width: 165px;
+    height: auto;
+    font-size: 14px;
+    line-height: 16px;
+}
+/*London HQ*/
+.home__map__wrapper .ld-cion{
+    width: 12px;
+    height: 12px;
+    background: url(../images/home/pop-icon.png) no-repeat;
+    position: absolute;
+    top: 230px;
+    left: 743px;
+    z-index: 2;
+    cursor: pointer;
+}
+.home__map__wrapper .ld-pop{
+    width: 310px;
+    height: 368px;
+    background: url(../images/home/pop-ld.png) no-repeat;
+    position: absolute;
+    top: -58px;
+    left: 681px;
+    display: none;
+    z-index: 1;
+}
+.home__map__wrapper .ld-pop .pop-txt{
+    width: 165px;
+    height: 160px;
+    position: absolute;
+    top: 105px;
+    left: 70px;
+    color: #023062;
+    overflow: auto;
+}
+.home__map__wrapper .ld-pop .pop-txt p.title{
+    width: 165px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.home__map__wrapper .ld-pop .pop-txt p.main{
+    width: 165px;
+    height: auto;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
