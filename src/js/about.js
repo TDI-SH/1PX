@@ -302,6 +302,7 @@
     {
         e.preventDefault();
         
+        //console.log('mouse down',e.target);
         isDown=true;
         lastX=getPosition(e).x;   
     }
@@ -324,6 +325,7 @@
     {
         e.preventDefault(); 
        
+        //console.log('mouseup',e.target);
         
         if(endX!==null&&dir!==null)
         {
