@@ -56,29 +56,31 @@
     margin: 0 auto;
     margin-top: 30px;
     position: relative;
+    -webkit-transform:rotate(0deg)
 }
 .home__map__wrapper
 {
     width: 1551px;
     height: 733px;
-    position: absolute;
     background: url(../images/home/map.png) no-repeat;
+    position: absolute;
     top: 33px;
     left: -750px;
     cursor: pointer;
 }
 /*shanghai*/
-.home__map__wrapper .sh-icon{
-    width: 21px;
-    height: 21px;
-    background: url(../images/home/icon-sh.png) no-repeat;
+.sh-icon{
+    width: 50px;
+    height: 50px;
+    background: url(../images/home/icon-sh.png) no-repeat center;
+    background-size: 21px 21px;
     position: absolute;
-    top: 343px;
-    left: 1253px;
+    top: 328px;
+    left: 1238px;
     cursor: pointer;
     z-index: 2;
 }
-.home__map__wrapper .sh-pop{
+.sh-pop{
     width: 310px;
     height: 368px;
     background: url(../images/home/pop-sh.png) no-repeat;
@@ -88,7 +90,7 @@
     display: none;
     z-index: 1;
 }
-.home__map__wrapper .sh-pop .pop-txt{
+.sh-pop .pop-txt{
     width: 165px;
     height: 119px;
     position: absolute;
@@ -96,20 +98,20 @@
     left: 70px;
     color: #023062;
 }
-.home__map__wrapper .sh-pop .pop-txt p.title{
+.sh-pop .pop-txt p.title{
     width: 165px;
     height: 40px;
     line-height: 40px;
     font-weight: bold;
     font-size: 16px;
 }
-.home__map__wrapper .sh-pop .pop-txt p.main{
+.sh-pop .pop-txt p.main{
     width: 165px;
     height: auto;
     font-size: 14px;
     line-height: 16px;
 }
-.home__map__wrapper .sh-pop .pop-btn{
+.sh-pop .pop-btn{
     width: 182px;
     height: 40px;
     background: url(../images/home/pop-btn.png) no-repeat;
@@ -119,17 +121,18 @@
     cursor: pointer;
 }
 /*Singapore*/
-.home__map__wrapper .sg-icon{
-    width: 12px;
-    height: 12px;
-    background: url(../images/home/pop-icon.png) no-repeat;
+.sg-icon{
+    width: 50px;
+    height: 50px;
+    background: url(../images/home/pop-icon.png) no-repeat center;
+    background-size: 12px 12px;
     position: absolute;
-    top: 472px;
-    left: 1178px;
+    top: 453px;
+    left: 1159px;
     z-index: 2;
     cursor: pointer;
 }
-.home__map__wrapper .sg-pop{
+.sg-pop{
     width: 310px;
     height: 321px;
     background: url(../images/home/pop-sg.png) no-repeat;
@@ -139,7 +142,7 @@
     display: none;
     z-index: 1;
 }
-.home__map__wrapper .sg-pop .pop-txt{
+.sg-pop .pop-txt{
     width: 165px;
     height: 119px;
     position: absolute;
@@ -147,31 +150,32 @@
     left: 70px;
     color: #023062;
 }
-.home__map__wrapper .sg-pop .pop-txt p.title{
+.sg-pop .pop-txt p.title{
     width: 165px;
     height: 40px;
     line-height: 40px;
     font-weight: bold;
     font-size: 16px;
 }
-.home__map__wrapper .sg-pop .pop-txt p.main{
+.sg-pop .pop-txt p.main{
     width: 165px;
     height: auto;
     font-size: 14px;
     line-height: 16px;
 }
 /*Hong Kong*/
-.home__map__wrapper .hk-icon{
-    width: 12px;
-    height: 12px;
-    background: url(../images/home/pop-icon.png) no-repeat;
+.hk-icon{
+    width: 50px;
+    height: 50px;
+    background: url(../images/home/pop-icon.png) no-repeat center;
+    background-size: 12px 12px;
     position: absolute;
-    top: 381px;
-    left: 1216px;
+    top: 362px;
+    left: 1197px;
     z-index: 2;
     cursor: pointer;
 }
-.home__map__wrapper .hk-pop{
+.hk-pop{
     width: 310px;
     height: 321px;
     background: url(../images/home/pop-hk.png) no-repeat;
@@ -181,7 +185,7 @@
     display: none;
     z-index: 1;
 }
-.home__map__wrapper .hk-pop .pop-txt{
+.hk-pop .pop-txt{
     width: 165px;
     height: 119px;
     position: absolute;
@@ -189,31 +193,32 @@
     left: 70px;
     color: #023062;
 }
-.home__map__wrapper .hk-pop .pop-txt p.title{
+.hk-pop .pop-txt p.title{
     width: 165px;
     height: 40px;
     line-height: 40px;
     font-weight: bold;
     font-size: 16px;
 }
-.home__map__wrapper .hk-pop .pop-txt p.main{
+.hk-pop .pop-txt p.main{
     width: 165px;
     height: auto;
     font-size: 14px;
     line-height: 16px;
 }
 /*New York*/
-.home__map__wrapper .ny-icon{
-    width: 12px;
-    height: 12px;
-    background: url(../images/home/pop-icon.png) no-repeat;
+.ny-icon{
+    width: 50px;
+    height: 50px;
+    background: url(../images/home/pop-icon.png) no-repeat center;
+    background-size: 12px 12px;
     position: absolute;
-    top: 278px;
-    left: 454px;
+    top: 259px;
+    left: 435px;
     z-index: 2;
     cursor: pointer;
 }
-.home__map__wrapper .ny-pop{
+.ny-pop{
     width: 310px;
     height: 368px;
     background: url(../images/home/pop-ny.png) no-repeat;
@@ -223,7 +228,7 @@
     display: none;
     z-index: 1;
 }
-.home__map__wrapper .ny-pop .pop-txt{
+.ny-pop .pop-txt{
     width: 165px;
     height: 160px;
     position: absolute;
@@ -232,31 +237,32 @@
     color: #023062;
     overflow: auto;
 }
-.home__map__wrapper .ny-pop .pop-txt p.title{
+.ny-pop .pop-txt p.title{
     width: 165px;
     height: 40px;
     line-height: 40px;
     font-weight: bold;
     font-size: 16px;
 }
-.home__map__wrapper .ny-pop .pop-txt p.main{
+.ny-pop .pop-txt p.main{
     width: 165px;
     height: auto;
     font-size: 14px;
     line-height: 16px;
 }
 /*London HQ*/
-.home__map__wrapper .ld-cion{
-    width: 12px;
-    height: 12px;
-    background: url(../images/home/pop-icon.png) no-repeat;
+.ld-cion{
+    width: 50px;
+    height: 50px;
+    background: url(../images/home/pop-icon.png) no-repeat center;
+    background-size: 12px 12px;
     position: absolute;
-    top: 230px;
-    left: 743px;
+    top: 211px;
+    left: 724px;
     z-index: 2;
     cursor: pointer;
 }
-.home__map__wrapper .ld-pop{
+.ld-pop{
     width: 310px;
     height: 368px;
     background: url(../images/home/pop-ld.png) no-repeat;
@@ -266,7 +272,7 @@
     display: none;
     z-index: 1;
 }
-.home__map__wrapper .ld-pop .pop-txt{
+.ld-pop .pop-txt{
     width: 165px;
     height: 160px;
     position: absolute;
@@ -275,20 +281,70 @@
     color: #023062;
     overflow: auto;
 }
-.home__map__wrapper .ld-pop .pop-txt p.title{
+.ld-pop .pop-txt p.title{
     width: 165px;
     height: 40px;
     line-height: 40px;
     font-weight: bold;
     font-size: 16px;
 }
-.home__map__wrapper .ld-pop .pop-txt p.main{
+.ld-pop .pop-txt p.main{
     width: 165px;
     height: auto;
     font-size: 14px;
     line-height: 16px;
 }
-
+/*base code*/
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+/*the animation definition*/
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+  50% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1)
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+  50% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    -ms-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1)
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1)
+  }
+}
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse
+}
 
 
 
