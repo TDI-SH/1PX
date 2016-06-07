@@ -30,6 +30,8 @@
     var isResizel = isResizer = false;
     var startX_1,startX_2;
 
+    moveId_1.style.left = '-750px';
+    moveId_2.style.left = '801px';
 
     var hammertime = new Hammer(mapId);
 
