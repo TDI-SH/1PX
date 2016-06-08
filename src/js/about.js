@@ -52,6 +52,8 @@
     {
         var btnReadMore=btnReadMores[i];
         btnReadMore.data_id=i;
+        btnReadMore.addEventListener('touchstart',handleClickReadMore,false);
+
         btnReadMore.addEventListener('click',handleClickReadMore,false);
     }
     btnDetailClose.addEventListener('click',handleClickDetailClose,false);
@@ -153,14 +155,15 @@
         {
             isPC=false;
             
-            unitWidthDetail=1060;
+            unitWidthDetail=windowWidth*0.8;
             unitwidth=windowWidth;
             offsetX=-(1-0.15)*windowWidth;
             maxX=0.15*windowWidth;      
             id=0;            
             
             cardsContainer.style.left=windowWidth*0.15+'px';
-            cardsContainer.style.fontSize=windowWidth+'px';                        
+            cardsContainer.style.fontSize=windowWidth+'px';
+            detailsContainer.style.fontSize=unitWidthDetail+'px';                     
         }
         else
         {

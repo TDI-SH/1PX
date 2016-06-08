@@ -142,11 +142,16 @@
     width: 100%;
     height: 100%;
 }
+.about__detail__img
+{
+    height: 256px;
+    background: url(../images/about/headImg1.jpg) no-repeat center center;
+    background-size: cover;    
+}
 .about__detail>img
 {
     width: 100%;
     display: block;
-    height: 265px;
 }
 .about__detail__headline
 {
@@ -165,7 +170,7 @@
     color: #909090;
     font-size: 18px;
     height: calc(100% - 265px);
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .about__detail__content>h2
 {    
@@ -214,7 +219,6 @@
     left: 6em;    
 }
 
-
 .about__detail__btnClose
 {
     cursor: pointer;
@@ -223,7 +227,7 @@
     height: 50px;
     top: 0;
     right: 0; 
-    background-image: url(../images/common/btnClose.png);
+    background: url(../images/common/btnClose.png) no-repeat center center;
 }
 /*** 详细信息 结束 ***/
 /*** 左右切换按钮 开始 ***/
@@ -332,8 +336,57 @@
     {
         width: 80%;
         height: calc(80% - 32px);/*(100%-40px)*0.8*/
-        
+        left: 10%;
+        top: calc(10% - 4px);        
     }
+    .about__detail__img
+    {
+        height: 100px;
+        background: url(../images/about/headImg1.jpg) no-repeat center center;
+        background-size: cover;    
+    }    
+    .about__detail__headline
+    {
+        font-size: 8px;
+        left: 0;
+        top: 0;
+        padding: 40px 20px;
+    }
+    
+    .about__detail__headline>span
+    {
+        font-size: 16px;        
+    }
+    
+    .about__detail__content
+    {
+        font-size: 9px;
+        height: calc(100% - 100px);
+    }
+    
+    .about__detail__content>h2
+    {    
+        font-size: 14px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 15px;    
+    }
+    
+    .about__detail__content>p
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 10px; 
+    }
+    
+    .about__detail__btnClose
+    {
+        width: 40px;
+        height: 40px;
+        background-size: 20px 20px;
+    }
+    
+    
     
     
     
