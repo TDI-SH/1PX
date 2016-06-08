@@ -2,38 +2,54 @@
 {
     console.log('common.js start');
     
-    var headerHeight=78;
+    var headerHeight;
+    handleResize(null);
     
-    var btnMenuOpen=document.querySelector('.menu__btnMenuOpen');
-    var btnMenuClose=document.querySelector('.menu__btnMenuClose');
-    var menuOpen=document.querySelector('.menu__open');
+    var btnMenu=document.querySelector('.menu__btnMenu');
+    var menuOpen=document.querySelector('.menu');
     
-    btnMenuOpen.addEventListener('click',handleMenuOpen,false);
-    //btnMenuOpen.addEventListener('touchstart',handleMenuOpen,false);
+    btnMenu.addEventListener('click',handleMenu,false);
+    btnMenu.addEventListener('touchstart',handleMenu,false);
     
-    btnMenuClose.addEventListener('click',handleMenuClose,false);
-    //btnMenuClose.addEventListener('touchstart',handleMenuClose,false);
-
+    window.addEventListener('resize',handleResize,false);
     
-    function handleMenuOpen(e)
+    var isOpen=false;
+    
+    
+    function handleMenu(e)
     {
-        console.log(e.type+'menuOpen');
+        e.preventDefault();//重要！
+           
+        isOpen=!isOpen;        
         
-        
-        menuOpen.style.display='block';
-        TweenLite.set(menuOpen,{height:headerHeight});
-        TweenLite.to(menuOpen,0.3,{height:'100%',ease:'Ease.easeOut'});       
+        if(isOpen)
+        {            
+            console.log(e.type+'menuOpen',e.target);
+            btnMenu.classList.add('menu__btnMenuClose');
+            menuOpen.style.display='block';
+            TweenLite.set(menuOpen,{height:headerHeight});
+            TweenLite.to(menuOpen,0.3,{height:'100%',ease:'Ease.easeOut'});             
+        }
+        else
+        {
+            console.log(e.type+'menuClose',e.target);
+            btnMenu.classList.remove('menu__btnMenuClose');
+            TweenLite.to(menuOpen,0.3,{height:headerHeight,ease:'Ease.easeIn'});                              
+            
+        }             
     }
     
-    function handleMenuClose(e)
+    function handleResize(e)
     {
-        console.log(e.type+'menuClose');
-        
-        TweenLite.to(menuOpen,0.3,{height:headerHeight,ease:'Ease.easeIn',onComplete:handleComplete});                              
+        var windowWidth=window.innerWidth;
+        if(windowWidth<480)
+        {
+            headerHeight=40;            
+        }
+        else
+        {
+            headerHeight=78;            
+        }
     }
-    
-    function handleComplete()
-    {
-        menuOpen.style.display='none';        
-    }    
+        
 })();
