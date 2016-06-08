@@ -6,7 +6,7 @@
     margin: 0 auto;
     color: #000000;
     font-family: 'Arial';
-    
+    height: 968px;
 }
 .home__headline
 {
@@ -345,7 +345,52 @@
   -webkit-animation-name: pulse;
   animation-name: pulse
 }
-
+@media screen and (max-width:480px){
+    .home{
+        width: 100vw;
+        height: 550px;
+    }
+    .home__headline{
+        font-size: 24px;
+        line-height: 52px;
+    }
+    .home__copy{
+        font-size: 12px;
+        line-height: 20px;
+        height: 60px;
+    }
+    .home__bg{
+        width: 100vw;
+        height: 57vw;
+        background-size: 100% 100%;
+        left: 0;
+        margin-left: 0;
+        top: 200px;
+    }
+    #home-map{
+        transform-origin:0 0;
+        -moz-transform:scale(0.5); 
+        -webkit-transform:scale(0.5);
+        -o-transform:scale(0.5);
+        transform: scale(0.5);
+        left: 50%;
+        margin-left: -196px;
+    }
+    /*.home__bg{
+        transform-origin:0 0;
+        -moz-transform:scale(0.4); 
+        -webkit-transform:scale(0.4);
+        -o-transform:scale(0.4);
+        transform: scale(0.4);
+    }
+    #home-map{
+        transform-origin:0 0;
+        -moz-transform:scale(0.4); 
+        -webkit-transform:scale(0.4);
+        -o-transform:scale(0.4);
+        transform: scale(0.4);
+    }*/
+}
 
 
 

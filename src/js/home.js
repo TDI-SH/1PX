@@ -16,11 +16,13 @@
 
     function resize(){
         var winHeight = $(window).height();
-        var topN = winHeight-1046;
+        var menuHeight = $('.header').height();
+        var contHeight = $('.home').height();
+        var topN = winHeight-contHeight-menuHeight;
         if(topN<=0){
-            $('.home').css({'top':78})
+            $('.home').css({'top':menuHeight})
         }else{
-            $('.home').css({'top':topN/2+78})
+            $('.home').css({'top':topN/2+menuHeight})
         }
     }
 
