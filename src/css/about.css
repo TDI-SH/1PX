@@ -175,8 +175,7 @@
 .about__detail__content>h2
 {    
     font-size: 28px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 40px;
     margin-top: 30px;    
 }
 .about__detail__content span
@@ -185,8 +184,7 @@
 }
 .about__detail__content>p
 {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 40px;
     margin-top: 20px; 
 }
 
@@ -334,9 +332,9 @@
     
     .about__details__wrapper
     {
-        width: 80%;
+        width: 80.5%;/*70x1.15=80.5*/
         height: calc(80% - 32px);/*(100%-40px)*0.8*/
-        left: 10%;
+        left: 9.75%;
         top: calc(10% - 4px);        
     }
     .about__detail__img
@@ -367,15 +365,13 @@
     .about__detail__content>h2
     {    
         font-size: 14px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 0 20px;
         margin-top: 15px;    
     }
     
     .about__detail__content>p
     {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 0 20px;
         margin-top: 10px; 
     }
     

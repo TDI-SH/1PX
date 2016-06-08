@@ -36,27 +36,27 @@
     window.addEventListener('resize',handleResize,false);
     
     btnLeft.addEventListener('click',handleClickLeft,false);
+    btnLeft.addEventListener('touchstart',handleClickLeft,false);
+    
     btnRight.addEventListener('click',handleClickRight,false);
+    btnRight.addEventListener('touchstart',handleClickRight,false);
         
     cardsWrapper.addEventListener('mousewheel',handleWheel,false);
     cardsWrapper.addEventListener('DOMMouseScroll',handleWheel,false);//for firefox
     
-    document.addEventListener('touchstart',handleDown,false);
-    document.addEventListener('touchmove',handleMove,false);
-    document.addEventListener('touchend',handleUp,false);
-    document.addEventListener('mousedown',handleDown,false);
-    document.addEventListener('mousemove',handleMove,false);
-    document.addEventListener('mouseup',handleUp,false);
+    freezeCrads(false);
     
     for(var i=0;i<num;i++)
     {
         var btnReadMore=btnReadMores[i];
         btnReadMore.data_id=i;
-        btnReadMore.addEventListener('touchstart',handleClickReadMore,false);
-
+        
         btnReadMore.addEventListener('click',handleClickReadMore,false);
+        btnReadMore.addEventListener('touchstart',handleClickReadMore,false);
     }
+    
     btnDetailClose.addEventListener('click',handleClickDetailClose,false);
+    btnDetailClose.addEventListener('touchstart',handleClickDetailClose,false);
     
     
      
@@ -85,13 +85,13 @@
             var endX=getX(id);
             var oldCard=cards[oldId];
             var card=cards[id];
-            if(isTween===undefined)
+            if(isTween===undefined||isTween===true)
             {
                 TweenLite.to(cardsContainer,unitTime,{left:endX,ease:'Ease.easeOut'});
                 TweenLite.to(oldCard,unitTime,{scale:1,ease:'Back.easeOut'});
                 TweenLite.to(card,unitTime,{scale:unitScale,ease:'Back.easeOut'});                
             }
-            else if(!isTween)
+            else if(isTween===false)
             {
                 TweenLite.set(cardsContainer,{left:endX});
                 TweenLite.set(oldCard,{scale:1});
@@ -155,7 +155,7 @@
         {
             isPC=false;
             
-            unitWidthDetail=windowWidth*0.8;
+            unitWidthDetail=windowWidth*0.805;
             unitwidth=windowWidth;
             offsetX=-(1-0.15)*windowWidth;
             maxX=0.15*windowWidth;      
@@ -182,17 +182,16 @@
         console.log('click readMore');
         
         isCard=false;
+        freezeCrads();
         
         var btnReadMore=e.target;
         var wantId=btnReadMore.data_id;
         var delay=wantId===id?0:unitTime;
         
-        switchCards(id,wantId);
-        
+        switchCards(id,wantId);        
         id=wantId;  
         
-        var wantLeft=-wantId*unitWidthDetail;
-        
+        var wantLeft=-wantId*unitWidthDetail;        
         TweenLite.set(detailsContainer,{delay:delay,left:wantLeft});        
         TweenLite.set(detailsWrapper,{delay:delay,display:'block',alpha:0,scale:0.8});
         TweenLite.to(detailsWrapper,unitTime,{delay:delay,alpha:1,scale:1,ease:'Back.easeOut'});       
@@ -203,6 +202,7 @@
         console.log('click detailClose');
         
         isCard=true;
+        freezeCrads(false);
         
         TweenLite.to(detailsWrapper,unitTime,{alpha:0,scale:0.8,ease:'Back.easeIn',onComplete:displayNoneObj,onCompleteParams:[detailsWrapper]});        
     }
@@ -370,6 +370,28 @@
         var posY=e.pageY||e.targetTouches[0].clientY; 
                 
         return {x:posX,y:posY}           
-    }  
+    }
+    
+    function freezeCrads(freeze)
+    {
+        if(freeze===undefined||freeze===true)
+        {
+            document.removeEventListener('touchstart',handleDown,false);
+            document.removeEventListener('touchmove',handleMove,false);
+            document.removeEventListener('touchend',handleUp,false);
+            document.removeEventListener('mousedown',handleDown,false);
+            document.removeEventListener('mousemove',handleMove,false);
+            document.removeEventListener('mouseup',handleUp,false);                         
+        }
+        else if(freeze===false)
+        {
+            document.addEventListener('touchstart',handleDown,false);
+            document.addEventListener('touchmove',handleMove,false);
+            document.addEventListener('touchend',handleUp,false);
+            document.addEventListener('mousedown',handleDown,false);
+            document.addEventListener('mousemove',handleMove,false);
+            document.addEventListener('mouseup',handleUp,false);                        
+        }       
+    } 
     
 })();
