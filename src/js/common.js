@@ -12,11 +12,14 @@
     btnMenuOpen.addEventListener('touchstart',handleMenuOpen,false);
     
     btnMenuClose.addEventListener('click',handleMenuClose,false);
-    btnMenuClose.addEventListener('touchstart',handleMenuClose,false);
+    //btnMenuClose.addEventListener('touchstart click',handleMenuClose,false);
 
     
     function handleMenuOpen(e)
     {
+        console.log(e.type+'menuOpen');
+        
+        
         menuOpen.style.display='block';
         TweenLite.set(menuOpen,{height:headerHeight});
         TweenLite.to(menuOpen,0.3,{height:'100%',ease:'Ease.easeOut'});       
@@ -24,6 +27,8 @@
     
     function handleMenuClose(e)
     {
+        console.log(e.type+'menuClose');
+        
         TweenLite.to(menuOpen,0.3,{height:headerHeight,ease:'Ease.easeIn',onComplete:handleComplete});                              
     }
     
