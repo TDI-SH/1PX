@@ -52,7 +52,7 @@
         btnReadMore.data_id=i;
         
         btnReadMore.addEventListener('click',handleClickReadMore,false);
-        btnReadMore.addEventListener('touchstart',handleClickReadMore,false);
+        btnReadMore.addEventListener('touchend',handleClickReadMore,false);
     }
     
     btnDetailClose.addEventListener('click',handleClickDetailClose,false);
@@ -328,16 +328,20 @@
     var dir=null;
     function handleDown(e)
     {
-        e.preventDefault();
-        
         //console.log('mouse down',e.target);
+        
+        if(e.type=='mousedown')
+            e.preventDefault();
+                    
         isDown=true;
         lastX=getPosition(e).x;   
     }
     
     function handleMove(e)
     {
-        e.preventDefault();        
+        if(e.type=='mousemove')
+            e.preventDefault();
+            
         if(isDown)
         {
             var nowX=getPosition(e).x;
@@ -351,10 +355,11 @@
     
     function handleUp(e)
     {
-        e.preventDefault(); 
-       
         //console.log('mouseup',e.target);
         
+        if(e.type=='mouseup')            
+            e.preventDefault();
+                   
         if(endX!==null&&dir!==null)
         {
             autoMoveCards(endX,dir);
