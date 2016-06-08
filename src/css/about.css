@@ -27,7 +27,8 @@
 .about__cards
 {
     position: absolute;
-    left: 0px;    
+    left: 0px;
+    font-size: 370px;   
 }
 .about__card
 {
@@ -85,31 +86,31 @@
 
 .about__cards>div:nth-child(1)
 {
-    left: 0px;    
+    left: 0em;    
 }
 .about__cards>div:nth-child(2)
 {
-    left: 370px;    
+    left: 1em;    
 }
 .about__cards>div:nth-child(3)
 {
-    left: 740px;    
+    left: 2em;    
 }
 .about__cards>div:nth-child(4)
 {
-    left: 1110px;    
+    left: 3em;    
 }
 .about__cards>div:nth-child(5)
 {
-    left: 1480px;    
+    left: 4em;    
 }
 .about__cards>div:nth-child(6)
 {
-    left: 1850px;    
+    left: 5em;    
 }
 .about__cards>div:nth-child(7)
 {
-    left: 2220px;    
+    left: 6em;    
 }
 
 /*** 卡片 结束 ***/
@@ -132,7 +133,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    left: 0px;        
+    left: 0px;
+    font-size: 1060px;       
 }
 .about__detail
 {
@@ -185,31 +187,31 @@
 
 .about__details>div:nth-child(1)
 {
-    left: 0px;    
+    left: 0em;    
 }
 .about__details>div:nth-child(2)
 {
-    left: 1060px;    
+    left: 1em;    
 }
 .about__details>div:nth-child(3)
 {
-    left: 2120px;    
+    left: 2em;    
 }
 .about__details>div:nth-child(4)
 {
-    left: 3180px;    
+    left: 3em;    
 }
 .about__details>div:nth-child(5)
 {
-    left: 4240px;    
+    left: 4em;    
 }
 .about__details>div:nth-child(6)
 {
-    left: 5300px;    
+    left: 5em;    
 }
 .about__details>div:nth-child(7)
 {
-    left: 6360px;    
+    left: 6em;    
 }
 
 
@@ -274,9 +276,9 @@
     }
     .about__cards
     {
-        width: 70%;
+        width: 70vw;
         height: 100%;
-        left: 15%;
+        /*left: 15%;*/
     }
     .about__card
     {        
@@ -324,6 +326,13 @@
         margin-top: -10vw;
         background-position: center center;
         background-size: 7vw 14vw;        
+    }
+    
+    .about__details__wrapper
+    {
+        width: 80%;
+        height: calc(80% - 32px);/*(100%-40px)*0.8*/
+        
     }
     
     

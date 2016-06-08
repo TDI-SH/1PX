@@ -16,29 +16,24 @@
     var btnDetailClose=document.querySelector('.about__detail__btnClose');
     
     var num=cards.length;
-    var unitwidth=370;
     var unitScale=1.15;
     var unitTime=0.4;
-    
-    var unitWidthDetail=1060;
-    
     var isCard=true;
-    var isPc=true;
-    //当前居中的卡片的id
+    
+    var unitWidthDetail;
+    var unitwidth; 
+    var offsetX;
+    var isPc;
+    var maxX;
     var id;
-    if(window.innerWidth<480)
-    {
-        isPC=false;
-        id=0;
-    }
-    else
-    {
-        isPC=true;          
-        id=1;
-    }
+    
+            
+    handleResize(null);
+    sateRightLeft(id);   
+    //居中当前卡片       
     centerCard(id);
     //添加事件侦听
-    //window.addEventListener
+    window.addEventListener('resize',handleResize,false);
     
     btnLeft.addEventListener('click',handleClickLeft,false);
     btnRight.addEventListener('click',handleClickRight,false);
@@ -72,12 +67,12 @@
     //根据id的值计算cardsContainer的left的值
     function getX(id)
     {
-        return (1-id)*unitwidth;
+        return (1-id)*unitwidth+offsetX;
     }
     //根据cardsContainer的left的值，计算最接近的id的值,
     function getId(x,isCeil)
     {
-        var value=1-(x/unitwidth);   
+        var value=1-((x-offsetX)/unitwidth);   
         return isCeil?Math.ceil(value):Math.floor(value);        
     }
     //根据oldId和id切换卡片
@@ -147,6 +142,36 @@
             btnLeft.style.display='block';
             btnRight.style.display='block';
         }  
+    }
+    
+    function handleResize(e)
+    {
+        console.log('resize');
+                
+        var windowWidth=window.innerWidth;
+        if(windowWidth<480)
+        {
+            isPC=false;
+            
+            unitWidthDetail=1060;
+            unitwidth=windowWidth;
+            offsetX=-(1-0.15)*windowWidth;
+            maxX=0.15*windowWidth;      
+            id=0;            
+            
+            cardsContainer.style.left=windowWidth*0.15+'px';
+            cardsContainer.style.fontSize=windowWidth+'px';                        
+        }
+        else
+        {
+            isPC=true;    
+            
+            unitWidthDetail=1060;
+            unitwidth=370;
+            offsetX=0;
+            maxX=unitwidth;   
+            id=1;          
+        }              
     }
     
     function handleClickReadMore(e)
@@ -237,8 +262,8 @@
                 
         if(endX<minX)
             endX=minX;
-        else if(endX>unitwidth)
-            endX=unitwidth;
+        else if(endX>maxX)
+            endX=maxX;
                     
         TweenLite.set(cardsContainer,{left:endX})     
         for(var i=0;i<num;i++)

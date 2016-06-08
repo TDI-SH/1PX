@@ -136,10 +136,12 @@ html,body,div,ul,li,img,p,h2,span
         top: 50%;
         z-index: 7891;
     }
+    /*
     .menu
     {
         width: 100%;
-    }   
+    }
+    */  
     .menu__btnMenuOpen
     {
         width: 40px;
@@ -148,7 +150,7 @@ html,body,div,ul,li,img,p,h2,span
     }
     .menu__open
     {
-        width: 100%;
+        width: 100vw;
     }
     .menu__btnMenuClose
     {
