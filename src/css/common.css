@@ -1,9 +1,9 @@
-html,body{
+/*html,body{
 	width: 100%;
 	height: 100%;
 	min-width: 1280px;
 	position: relative;
-}
+}*/
 html,body,div,ul,li,img,p,h2,span
 {
     margin: 0;
@@ -24,7 +24,8 @@ html,body,div,ul,li,img,p,h2,span
 .header__wrapper
 {
     position: relative;
-    width: 1280px;
+    width: 66.7%;
+    max-width: 1280px;
     height: 100%;
     margin: 0 auto;
 }
@@ -41,7 +42,8 @@ html,body,div,ul,li,img,p,h2,span
     margin-top: -19px;
     top: 50%; 
     background: url(../images/common/logo.png) no-repeat;
-    background-size: contain;      
+    background-size: contain;
+    z-index: 7891;    
 }
 /***header 结束 ***/
 
@@ -50,7 +52,6 @@ html,body,div,ul,li,img,p,h2,span
 {
     position: absolute;
     width: 357px;
-    height: 100%;
     right: 0;
     top: 0;
     height: 78px;
@@ -58,21 +59,89 @@ html,body,div,ul,li,img,p,h2,span
     background-color: #ed871b;
     z-index: 7890;   
 }
+.menu__transparent
+{
+    background-color: transparent;    
+}
 .menu__btnMenu
 {
     position: absolute;
     width: 106px;
-    height: 78px;
+    height: 78px;    
     top: 0;
     right: 0;
-    background: url(../images/common/btnMenuOpen.png) no-repeat center center;
     cursor: pointer;
 }
-
-.menu__btnMenuClose
+.menu__btnMenu__lines
 {
-    background: url(../images/common/btnMenuClose.png) no-repeat center center;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    margin-top: -12px;
+    left: 50%;
+    top: 50%;
 }
+.menu__btnMenu span
+{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    background-color: #ffffff;
+    
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -ms-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+        
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+.menu__btnMenu span:nth-child(1)
+{
+    top: 0;        
+}
+.menu__btnMenu span:nth-child(2)
+{
+    top: 11px;
+}
+.menu__btnMenu span:nth-child(3)
+{
+    top: 22px;
+}
+.menu__btnMenu.menu__btnMenuClose span:nth-child(1)
+{
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    
+    left: calc(0px + 2.5px);
+    top: calc(0px + 2.5px);   
+}
+.menu__btnMenu.menu__btnMenuClose span:nth-child(2)
+{
+    width: 0;
+    opacity: 0;    
+}
+.menu__btnMenu.menu__btnMenuClose span:nth-child(3)
+{
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    
+    left: calc(0px + 2.5px);
+    top: calc(22px - 2.5px);
+}
+
 .menu ul
 {
     margin-top: 78px;    
@@ -123,7 +192,6 @@ html,body,div,ul,li,img,p,h2,span
         margin-top: -9.5px;
         left: 50%;
         top: 50%;
-        z-index: 7891;
     }
     .menu
     {
@@ -134,8 +202,32 @@ html,body,div,ul,li,img,p,h2,span
     {
         width: 40px;
         height: 40px;
-        background-size: 15px 15px;
-    }      
+    }
+    .menu__btnMenu__lines
+    {
+        width: 16px;
+        height: 16px;
+        margin-left: -8px;
+        margin-top: -8px;
+    }
+    .menu__btnMenu span:nth-child(2)
+    {
+        top: 7px;
+    }
+    .menu__btnMenu span:nth-child(3)
+    {
+        top: 14px;
+    }
+    .menu__btnMenu.menu__btnMenuClose span:nth-child(1)
+    {
+        left: calc(0px + 1.5px);
+        top: calc(0px + 1.5px);   
+    }
+    .menu__btnMenu.menu__btnMenuClose span:nth-child(3)
+    {
+        left: calc(0px + 1.5px);
+        top: calc(14px - 1.5px);
+    }
     .menu ul
     {
         margin-top: 40px;    
