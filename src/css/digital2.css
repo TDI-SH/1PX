@@ -53,37 +53,43 @@
 .slider__indicators
 {
     position: absolute;
-    right: 1.1%;
+    right: 52.5px;/*150x0.5-45*0.5*/
     bottom: 2.5%;  
+    width: 180px;/*45x4=180*/
+    height: 80px;
 }
-.slide__indicator
+.slider__indicator
 {
     position: absolute;
     font-size: 45px;
+    width: 45px;
+}
+.slider__indicator__over
+{
+    display: none;
 }
 .slider__indicator__text
 {
+    position: absolute;
+    width: 150px;/*宽度能包裹所有的文本即可*/
+    left: -52.5px;/*150x0.5-45*0.5*/        
     font-size: 13.5px;
-    text-align: center;
-            
-    -webkit-transform: translateX(calc(-50% + 22.5px));
-    -moz-transform: translateX(calc(-50% + 22.5px));
-    -ms-transform: translateX(calc(-50% + 22.5px));
-    -o-transform: translateX(calc(-50% + 22.5px));
-    transform: translateX(calc(-50% + 22.5px))   
+    text-align: center;          
 }
 .slider__indicator__tri
 {
-    width: 45px;
-    height: 25px;
-    background: url(../images/service/digital/arrow_up.png) no-repeat center bottom;
-    background-size: 31px 16px;     
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    top: 40px;    
+    background: url(../images/service/digital/arrow_up.png) no-repeat center top;
 }
 .slider__indicator__circle
 {
-    position: relative;
-    width: 45px;
+    position: absolute;
+    width: 100%;
     height: 25px;
+    top: 55px;
     cursor: pointer;
 }
 .slider__indicator__circle>div
@@ -95,31 +101,32 @@
     top: calc(50% - 5px);
     border: solid 2px #ffffff;
     box-sizing: border-box;
-    border-radius: 50%;  
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+.slider__indicator__circle__select
+{
+    background-color: transparent
 }
 
-.slider__indicators .slide__indicator:nth-child(1)
+.slider__indicators>.slider__indicator:nth-child(1)
 {
     left: 0em;
 }
-.slider__indicators .slide__indicator:nth-child(2)
+.slider__indicators>.slider__indicator:nth-child(2)
 {
     left: 1em;
 }
-.slider__indicators .slide__indicator:nth-child(3)
+.slider__indicators>.slider__indicator:nth-child(3)
 {
     left: 2em;
 }
-.slider__indicators .slide__indicator:nth-child(4)
+.slider__indicators>.slider__indicator:nth-child(4)
 {
     left: 3em;
 }
-
-
-
-
-
 /*** slider 结束 ***/
+
 /*** btnAdaptation btnCreate 开始 ***/
 .digital__btn
 {
@@ -150,6 +157,26 @@
     left: calc(50% + 2%);
 }
 /*** btnAdaptation btnCreate 结束 ***/
+
+
+
+/*** 手机 开始 ***/
+@media screen and (max-width:480px)
+{
+    .digital__btn
+    {
+        width: 25vw;
+        height: 25vw;
+        line-height: 25vw;
+        bottom: calc(50% - 12.5vw);
+    }   
+    .slider__indicators
+    {
+        margin-right: -90px;
+        right: 50%;
+    }
+}
+/*** 手机 结束 ***/
 
 
 

@@ -61,7 +61,9 @@
     {
         btnMenu.classList.add('menu__btnMenuClose');
         
+        menu.style.backgroundColor='#002e61';
         TweenLite.set(menu,{height:headerHeight});
+        
         if(menu.classList.contains('menu__transparent'))
         {
             menu.style.backgroundColor='#ed871b';
@@ -72,16 +74,13 @@
     function closeMenu()
     {
         btnMenu.classList.remove('menu__btnMenuClose');
-                
+                        
         TweenLite.to(menu,0.3,{height:headerHeight,ease:'Ease.easeIn',onComplete:changeMenuColor});        
     }
     
     function changeMenuColor()
     {
-        if(menu.classList.contains('menu__transparent'))
-        {
-            menu.style.backgroundColor='transparent';
-        }        
+        menu.style.backgroundColor='transparent';               
     }
     
     function handleResize(e)
