@@ -7,6 +7,7 @@
     
     var btnMenu=document.querySelector('.menu__btnMenu');
     var menu=document.querySelector('.menu');
+    var headerLogo=document.querySelector('.header__logo');
     
     btnMenu.addEventListener('click',handleClick,false);
     btnMenu.addEventListener('touchstart',handleClick,false);
@@ -61,6 +62,12 @@
     {
         btnMenu.classList.add('menu__btnMenuClose');
         
+        var windowWidth=window.innerWidth;
+        if(windowWidth<480)
+        {
+            changeBg(headerLogo,'url(./images/common/logoWhite.png)');
+        }
+        
         menu.style.backgroundColor='#002e61';
         TweenLite.set(menu,{height:headerHeight});
         
@@ -74,13 +81,20 @@
     function closeMenu()
     {
         btnMenu.classList.remove('menu__btnMenuClose');
+        
                         
         TweenLite.to(menu,0.3,{height:headerHeight,ease:'Ease.easeIn',onComplete:changeMenuColor});        
     }
     
     function changeMenuColor()
     {
-        menu.style.backgroundColor='transparent';               
+        menu.style.backgroundColor='transparent';
+        changeBg(headerLogo,'url(./images/common/logo.png)');             
+    }
+    
+    function changeBg(dom,src)
+    {
+        dom.style.backgroundImage=src;       
     }
     
     function handleResize(e)
