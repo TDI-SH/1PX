@@ -15,6 +15,7 @@
     var detailsWrapper=document.querySelector('.about__details__wrapper');
     var btnDetailClose=document.querySelector('.about__detail__btnClose');
     
+    
     var num=cards.length;
     var unitScale=1.15;
     var unitTime=0.4;
@@ -120,6 +121,7 @@
     
     function swicthDetails(oldId,id)
     {
+        
         if(oldId!=id)
         {
             var endLeft=-id*unitWidthDetail;
@@ -162,19 +164,38 @@
             id=0;            
             
             cardsContainer.style.left=windowWidth*0.15+'px';
-            cardsContainer.style.fontSize=windowWidth+'px';
-            detailsContainer.style.fontSize=unitWidthDetail+'px';                     
+            
+            setFontSize(cardsContainer,unitwidth);
+            setFontSize(detailsContainer,unitWidthDetail);
         }
-        else
+        else if(windowWidth)
         {
             isPC=true;    
             
-            unitWidthDetail=1060;
-            unitwidth=370;
+            unitWidthDetail=windowWidth*0.66*0.83;
+            unitwidth=windowWidth*0.66*0.83*0.35;
             offsetX=0;
-            maxX=unitwidth;   
-            id=1;          
+            maxX=unitwidth;
+            
+            setFontSize(cardsContainer,unitwidth);
+            setFontSize(detailsContainer,unitWidthDetail);
+            
+            if(id===undefined)
+            {
+                id=1;
+            }
+            else
+            {
+                
+            }         
+            
+            
         }              
+    }
+    
+    function setFontSize(dom,size)
+    {
+        dom.style.fontSize=size+'px';
     }
     
     function handleClickReadMore(e)
