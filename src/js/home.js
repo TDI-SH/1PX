@@ -24,8 +24,25 @@
 
     function resize(){
         var winHeight = $(window).height();
+        var winWidth = $(window).width();
         var menuHeight = $('.header').height();
         var contHeight = $('.home').height();
+
+        if(winWidth>480){
+            var _sx=winWidth/1280;
+            var _sy=winHeight/1080;
+            var _smax=(_sx<=_sy)?_sx:_sy;
+            $('.home').css({
+                '-webkit-transform-origin':'50% 0',
+                '-ms-transform-origin':'50% 0',
+                'transform-origin':'50% 0',
+                '-webkit-transform':'scale('+_smax+')',
+                '-ms-transform': 'scale('+_smax+')',
+                'transform': 'scale('+_smax+')'
+            })
+            contHeight = contHeight*_smax;
+        }
+        
         var topN = winHeight-contHeight-menuHeight;
         if(topN<=0){
             $('.home').css({'top':menuHeight})
@@ -49,7 +66,7 @@
         if(ev){
             moveX = parseInt(ev.deltaX/20);
         }else{
-            moveX -=2;
+            moveX -=1;
         }
         startX_1 = parseInt(moveId_1.style.left);
         startX_2 = parseInt(moveId_2.style.left);
@@ -127,7 +144,7 @@
     function moveAuto(){
         moveInterval = self.setInterval(function(){
             mapMove();
-        },100);
+        },30);
     }
     
     function mouseSet(){
@@ -141,6 +158,8 @@
         },false);
 
         function earthReset(){
+            moveId_2.style.opacity = 1;
+            moveId_1.style.opacity = 1;
             window.clearInterval(moveInterval);
             var map1_l = parseInt(moveId_1.style.left);
             var map2_l = parseInt(moveId_2.style.left);
