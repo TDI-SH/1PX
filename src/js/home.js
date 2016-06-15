@@ -21,17 +21,17 @@
         moveAuto();
         mouseSet();
     }
-
+    var _smax;
     function resize(){
         var winHeight = $(window).height();
         var winWidth = $(window).width();
         var menuHeight = $('.header').height();
         var contHeight = $('.home').height();
-
+        
         if(winWidth>480){
             var _sx=winWidth/1280;
             var _sy=winHeight/1080;
-            var _smax=(_sx<=_sy)?_sx:_sy;
+            _smax=(_sx<=_sy)?_sx:_sy;
             $('.home').css({
                 '-webkit-transform-origin':'50% 0',
                 '-ms-transform-origin':'50% 0',
@@ -42,7 +42,7 @@
             })
             contHeight = contHeight*_smax;
         }
-        
+
         var topN = winHeight-contHeight-menuHeight;
         if(topN<=0){
             $('.home').css({'top':menuHeight})
@@ -193,24 +193,38 @@
     var planetId_2 = document.getElementById('planet_2');
     var planetId_3 = document.getElementById('planet_3');
     var maxl = document.body.clientWidth;
-    var planetData = [
-        {'id':planetId_1,'width':100,'height':126,'left':260,'time_1':4,'time_2':5,'orw':50,'orh':63},
-        {'id':planetId_2,'width':100,'height':74,'left':856,'time_1':4,'time_2':5,'orw':66,'orh':49},
-        {'id':planetId_3,'width':100,'height':74,'left':856,'time_1':4,'time_2':5,'orw':66,'orh':49}
-    ]
+
     function planetAni1(){
-        TweenLite.fromTo(planetId_1,3,{'left':(1280-maxl)/2-25,'width':50,'height':63},{'left':260,ease:'Cubic.easeIn',onComplete:function(){
-            TweenLite.to(planetId_1,4,{'left':maxl,'width':100,'height':126,ease:'Cubic.easeOut',onComplete:function(){
-                planetAni1();
+        if(_smax){
+            TweenLite.fromTo(planetId_1,3,{'left':((1280-maxl)/2-25)*_smax,'width':50*_smax,'height':63*_smax},{'left':260*_smax,ease:'Cubic.easeIn',onComplete:function(){
+                TweenLite.to(planetId_1,4,{'left':maxl,'width':100*_smax,'height':126*_smax,ease:'Cubic.easeOut',onComplete:function(){
+                    planetAni1();
+                }})
             }})
-        }})
+        }else{
+            TweenLite.fromTo(planetId_1,3,{'left':(1280-maxl)/2-25,'width':50,'height':63},{'left':260,ease:'Cubic.easeIn',onComplete:function(){
+                TweenLite.to(planetId_1,4,{'left':maxl,'width':100,'height':126,ease:'Cubic.easeOut',onComplete:function(){
+                    planetAni1();
+                }})
+            }})
+        }
+        
     }
     function planetAni3(){
-        TweenLite.fromTo(planetId_3,4,{'left':856,'width':100,'height':74},{'left':maxl,'width':0,'height':0,ease:'Cubic.easeOut',onComplete:function(){
-            TweenLite.fromTo(planetId_3,5,{'left':(1280-maxl)/2-66,'width':66,'height':49},{'left':856,'width':100,'height':74,ease:'Cubic.easeOut',onComplete:function(){
-                planetAni3();
+        if(_smax){
+            TweenLite.fromTo(planetId_3,4,{'left':856*_smax,'width':100*_smax,'height':74*_smax},{'left':maxl,'width':0,'height':0,ease:'Cubic.easeOut',onComplete:function(){
+                TweenLite.fromTo(planetId_3,5,{'left':((1280-maxl)/2-66)*_smax,'width':66*_smax,'height':49*_smax},{'left':856*_smax,'width':100*_smax,'height':74*_smax,ease:'Cubic.easeOut',onComplete:function(){
+                    planetAni3();
+                }})
             }})
-        }})
+        }else{
+            TweenLite.fromTo(planetId_3,4,{'left':856,'width':100,'height':74},{'left':maxl,'width':0,'height':0,ease:'Cubic.easeOut',onComplete:function(){
+                TweenLite.fromTo(planetId_3,5,{'left':(1280-maxl)/2-66,'width':66,'height':49},{'left':856,'width':100,'height':74,ease:'Cubic.easeOut',onComplete:function(){
+                    planetAni3();
+                }})
+            }})
+        }
+        
     }
 
     $(window).resize(function(event) {
