@@ -302,7 +302,7 @@ html,body
 
 @media screen and (max-width:480px)
 {
-    html
+    html,body
     {
         min-height: auto;
     }
@@ -326,18 +326,27 @@ html,body
     {        
         width:100%;           
     }
+    .about__card__title
+    {
+        font-size: 16px;
+    }    
     .about__card__content__img
     {
         width: 30vw;
         height: 30vw;
         margin-left: -15vw;
     }
+    .about__card__content__headline
+    {
+        font-size: 12px;
+    }
+            
     .about__card__content__btnReadMore
     {
         width: 30vw;
         height: 9vw;
         margin-left: -15vw;
-        font-size: 1vw;
+        font-size: 12px;
         line-height: 9vw;
         border-radius: 4.5vw;
     }
