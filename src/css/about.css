@@ -1,8 +1,13 @@
 html
 {
+    -ms-touch-action: none;
+    touch-action: none;    
+}
+html,body
+{
     position: relative;
     height: 100%;
-    min-height: 640px;
+    min-height: 640px;    
 }
 .about
 {    
@@ -70,6 +75,12 @@ html
     border-radius: 50%;
     overflow: hidden;    
 }
+.about__card__content__img_byHeight
+{
+    width: 19vh;
+    height: 19vh;
+    margin-left: -9.5vh;    
+}
 .about__card__content__img>img
 {
     position: absolute;
@@ -84,6 +95,10 @@ html
     text-align: center;
     color: #a3a6a9;
 }
+.about__card__content__headline_byHeight
+{
+    font-size: 2vh;
+}
 .about__card__content__btnReadMore
 {
     position: absolute;
@@ -91,7 +106,7 @@ html
     height: 3vw;
     margin-left: -5vw;
     left: 50%;
-    top: 80%;
+    bottom: 6%;
     color: #ffffff;    
     font-size: 1vw;
     line-height: 3vw;
@@ -99,6 +114,15 @@ html
     border-radius: 1.5vw;
     background-color: #3da3dc;
     cursor: pointer;  
+}
+.bout__card__content__btnReadMoreb_byHeight
+{
+    height: 5vh;
+    width: 17vh;
+    margin-left: -8.5vh;
+    font-size: 2vh;
+    line-height: 5vh;
+    border-radius: 2.5vh;
 }
 
 .about__cards>div:nth-child(1)
@@ -317,6 +341,23 @@ html
         line-height: 9vw;
         border-radius: 4.5vw;
     }
+    .about__btnLeft
+    {
+        width: 9.75vw;
+        height: 9.75vw;
+        margin-top: -4.875vw;
+        background-size: contain;
+        background-position: center center;
+    }
+    .about__btnRight
+    {
+        width: 9.75vw;
+        height: 9.75vw;
+        margin-top: -4.875vw;
+        background-size: contain;
+        background-position: center center;
+    }
+    
     
     .about__details__wrapper
     {
@@ -364,12 +405,7 @@ html
         width: 40px;
         height: 40px;
         background-size: 20px 20px;
-    }
-    
-    
-    
-    
-    
+    }    
 }
 
 

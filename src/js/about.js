@@ -9,11 +9,17 @@
     var cards=document.querySelectorAll('.about__card');    
     var cardsContainer=document.querySelector('.about__cards');    
     var cardsWrapper=document.querySelector('.about__cards__wrapper');
+    var cardImgs=document.querySelectorAll('.about__card__content__img');
+    var cardHeadlines=document.querySelectorAll('.about__card__content__headline');
+    
     
     var details=document.querySelectorAll('.about__detail');
     var detailsContainer=document.querySelector('.about__details');
     var detailsWrapper=document.querySelector('.about__details__wrapper');
     var btnDetailClose=document.querySelector('.about__detail__btnClose');
+    
+    
+    
     
     
     var num=cards.length;
@@ -153,6 +159,8 @@
         console.log('resize');
                 
         var windowWidth=window.innerWidth;
+        var windowHeight=window.innerHeight;
+        
         if(windowWidth<480)
         {
             isPC=false;
@@ -168,7 +176,7 @@
             setFontSize(cardsContainer,unitwidth);
             setFontSize(detailsContainer,unitWidthDetail);
         }
-        else if(windowWidth)
+        else
         {
             isPC=true;    
             
@@ -183,14 +191,14 @@
             if(id===undefined)
             {
                 id=1;
-            }
-            else
-            {
-                
-            }         
-            
-            
-        }              
+            }          
+        }
+               
+        
+        betweenDo(0.19*windowHeight,0.1*windowWidth,function(){addClass(cardImgs,'about__card__content__img_byHeight')},function(){removeClass(cardImgs,'about__card__content__img_byHeight')})
+        betweenDo(0.02*windowHeight,0.01*windowWidth,function(){addClass(cardHeadlines,'about__card__content__headline_byHeight')},function(){removeClass(cardHeadlines,'about__card__content__headline_byHeight')});
+        betweenDo(0.05*windowHeight,0.03*windowWidth,function(){addClass(btnReadMores,'bout__card__content__btnReadMoreb_byHeight')},function(){removeClass(btnReadMores,'bout__card__content__btnReadMoreb_byHeight')});    
+          
     }
     
     function setFontSize(dom,size)
@@ -418,6 +426,39 @@
             document.addEventListener('mousemove',handleMove,false);
             document.addEventListener('mouseup',handleUp,false);                        
         }       
-    } 
+    }
     
+    function addClass(doms,className)
+    {
+        var len=doms.length;
+        for(var i=0;i<len;i++)
+        {
+            var dom=doms[i];
+            dom.classList.add(className);            
+        }
+    }
+    
+    function removeClass(doms,className)
+    {
+        var len=doms.length;
+        for(var i=0;i<len;i++)
+        {
+            var dom=doms[i];
+            dom.classList.remove(className);            
+        } 
+    }
+    
+    
+    function betweenDo(min,max,minHandler,maxHandler)
+    {
+        if(min<=max)
+        {
+            minHandler();
+        }        
+        else
+        {
+            maxHandler();
+        }
+    }
+   
 })();
