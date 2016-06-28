@@ -10,18 +10,13 @@
     var cardsContainer=document.querySelector('.about__cards');    
     var cardsWrapper=document.querySelector('.about__cards__wrapper');
     var cardImgs=document.querySelectorAll('.about__card__content__img');
-    var cardHeadlines=document.querySelectorAll('.about__card__content__headline');
-    
+    var cardHeadlines=document.querySelectorAll('.about__card__content__headline');    
     
     var details=document.querySelectorAll('.about__detail');
     var detailsContainer=document.querySelector('.about__details');
     var detailsWrapper=document.querySelector('.about__details__wrapper');
     var btnDetailClose=document.querySelector('.about__detail__btnClose');
-    
-    
-    
-    
-    
+        
     var num=cards.length;
     var unitScale=1.15;
     var unitTime=0.4;
@@ -32,8 +27,7 @@
     var offsetX;
     var isPc;
     var maxX;
-    var id;
-    
+    var id;    
             
     handleResize(null);
     sateRightLeft(id);   
