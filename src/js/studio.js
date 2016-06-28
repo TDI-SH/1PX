@@ -5,12 +5,15 @@
     var studioCards=document.querySelectorAll('.studio__card');
     var num=studioCards.length;
     var btnOurWorks=document.querySelector('.studio__intro__ourworks');
+    var btnLeft=document.querySelector('.studio__btnLeft');
     var studioIntro=document.querySelector('.studio>.studio__left');
     var studioOurWorks=document.querySelector('.studio__ourworks'); 
     
-    
+    addClickEvent(btnLeft,leaveOurWorks);
     addClickEvent(btnOurWorks,enterOurWorks);
     window.addEventListener('resize',handleResize,false);
+    
+    
     handleResize(null)
     
     
@@ -25,12 +28,19 @@
     
     function enterOurWorks(e)
     {
-        console.log(studioIntro,studioOurWorks);
         TweenLite.to(studioIntro,0.5,{alpha:0,left:'-32%'});
         
         studioOurWorks.style.display='block';
+        TweenLite.set(studioOurWorks,{alpha:0});
+        TweenLite.to(studioOurWorks,0.5,{alpha:1});                
+    }
+    
+    function leaveOurWorks(e)
+    {
+        TweenLite.set(studioIntro,{alpha:0});
+        TweenLite.to(studioIntro,0.5,{alpha:1});       
         
-        TweenLite.from(studioOurWorks,0.5,{alpha:0});                
+        TweenLite.to(studioOurWorks,0.5,{alpha:0,onComplete:function(){studioOurWorks.style.display='none';}});        
     }
     
     function addClickEvent(dom,handler)
