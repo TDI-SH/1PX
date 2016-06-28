@@ -95,7 +95,6 @@ a
     position: relative;
     float: left;
     width: calc(50% - 10px);
-    background-color: #ffda06;
     overflow: hidden;
 }
 .studio__card>img

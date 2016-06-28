@@ -3,6 +3,7 @@
     console.log('studio.js start');    
     
     var studioCards=document.querySelectorAll('.studio__card');
+    var studioCardOvers=document.querySelectorAll('.studio__card_over');
     var num=studioCards.length;
     var btnOurWorks=document.querySelector('.studio__intro__ourworks');
     var btnLeft=document.querySelector('.studio__btnLeft');
@@ -20,9 +21,11 @@
     function handleResize(e)
     {
         var studioCardWidth=getComputedStyle(studioCards[0]).width;
+        var studioCardOverWidth=getComputedStyle(studioCardOvers[0]).width;
         for(var i=0;i<num;i++)
         {
-            var studioCard=studioCards[i].style.height=studioCardWidth;
+            studioCards[i].style.height=studioCardWidth;
+            //studioCardOvers[i].style.height=studioCardOverWidth;
         }               
     }
     
