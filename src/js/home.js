@@ -37,6 +37,8 @@
                 '-ms-transform-origin':'50% 0',
                 'transform-origin':'50% 0',
                 '-webkit-transform':'scale('+_smax+')',
+
+
                 '-ms-transform': 'scale('+_smax+')',
                 'transform': 'scale('+_smax+')'
             })
@@ -59,7 +61,6 @@
 
     moveId_1.style.left = '-750px';
     moveId_2.style.left = '801px';
-
 
     function mapMove(ev){
         var moveX = 0;

@@ -1,0 +1,173 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    font-size: 10px;
+    overflow: hidden;
+}
+p{
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+#contactus{
+    position: absolute;
+    top:78px;
+    width: 100%;
+    margin: 0 auto;
+    color: #fff;
+    font-family: 'Arial';
+    height: 100%;
+    background-color: #3da3dc;
+    overflow: hidden;
+}
+#contactus #contact-bg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    margin-top: -100%;
+    margin-left: -100%;
+}
+#contactus .title{
+    position: absolute;
+    top: 32.5%;
+    left: 50%;
+    z-index: 10;
+    font-size: 4rem;
+}
+#contactus .sub-t{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    z-index: 10;
+    font-size: 1.5rem;
+}
+#contactus .border{
+    width: 12.5%;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    z-index: 10;
+    opacity: 0.3;
+}
+#contactus .location{
+    position: absolute;
+    z-index: 10;
+    top: 49%;
+    left: 47%;
+}
+#contactus .location img{
+    display: block;
+    float: left;
+}
+#contactus .location .txt{
+    float: left;
+    font-size: 1rem;
+    margin-left: 1.7rem
+}
+#contactus .phone{
+    position: absolute;
+    z-index: 10;
+    top: 59%;
+    left: 47%;
+}
+#contactus .phone img{
+    display: block;
+    float: left;
+}
+#contactus .phone .txt{
+    float: left;
+    font-size: 1rem;
+    margin-left: 1.7rem
+}
+#contactus .mail{
+    position: absolute;
+    z-index: 10;
+    top: 69%;
+    left: 47%;
+}
+#contactus .button{
+    position: absolute;
+    z-index: 10;
+    top: 67.5%;
+    left: 50.5%;
+}
+
+@media screen and (max-width:480px){
+    #contactus .title{
+        width: 60%;
+        position: absolute;
+        top: 12.5%;
+        left: 20%;
+        z-index: 10;
+        font-size: 4rem;
+    }
+    #contactus .sub-t{
+        width: 60%;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 10;
+        font-size: 1.5rem;
+    }
+    #contactus .border{
+        width: 12.5%;
+        height: 1px;
+        background-color: #fff;
+        position: absolute;
+        top: 26%;
+        left: 20%;
+        z-index: 10;
+        opacity: 0.3;
+    }
+    #contactus .location{
+        position: absolute;
+        z-index: 10;
+        top: 29%;
+        left: 12%;
+    }
+    #contactus .location img{
+        display: block;
+        float: left;
+    }
+    #contactus .location .txt{
+        float: left;
+        font-size: 1rem;
+        margin-left: 1.7rem
+    }
+    #contactus .phone{
+        position: absolute;
+        z-index: 10;
+        top: 39%;
+        left: 12%;
+    }
+    #contactus .phone img{
+        display: block;
+        float: left;
+    }
+    #contactus .phone .txt{
+        float: left;
+        font-size: 1rem;
+        margin-left: 1.7rem
+    }
+    #contactus .mail{
+        position: absolute;
+        z-index: 10;
+        top: 49%;
+        left: 12%;
+    }
+    #contactus .button{
+        position: absolute;
+        z-index: 10;
+        top: 47.5%;
+        left: 21.5%;
+    }
+}
+
+
+
+
+
+

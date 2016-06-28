@@ -31,7 +31,9 @@
 					display: none;
 				}
 				.arrow{
-					@include department-sprite(arrow);
+					width: 14px;
+					height: 28px;
+					background-image: image-url('service/department/arrow.png',false,false);
 					position: absolute;
 					top: 190px;
 					display: none;
@@ -84,4 +86,60 @@
 		}
 	}
 	
+}
+@media screen and (max-width:480px){
+	html,body{
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	#department{
+		width: 100%;
+	    height: auto;
+	    position: relative;
+	    overflow: hidden;
+	    left: 0;
+	    margin-left: 0;
+	    top: 40px;
+	    section{
+	    	@for $i from 1 through 4 {
+	    		&.section-#{$i}{
+	    			width: 100vw;
+    				height: 57vw;
+    				.arrow{
+						@if $i == 1 {
+							top: 25.5vw;
+							left: 60vw;
+						} @else if $i == 2{
+							top: 25.5vw;
+							left: 60vw;
+						} @else if $i == 3 {
+							top: 25.5vw;
+							left: 65vw;
+						}@else if $i == 4 {
+							top: 25.5vw;
+							left: 70vw;
+						}
+    				}
+    				.bord{
+						@if $i == 1 {
+							top: 32vw;
+							left: 41vw;
+						} @else if $i == 2{
+							top: 32vw;
+							left: 41vw;
+						} @else if $i == 3 {
+							top: 32vw;
+							left: 36.5vw;
+						}@else if $i == 4 {
+							left: 32.5vw;
+							top: 32vw;
+						}
+    				}
+	    		}
+	    	}
+	    	p{
+	    		line-height: 57vw;
+	    	}
+	    }
+	}
 }

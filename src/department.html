@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 	<title>TAG Shanghai</title>
 	<link rel="stylesheet" href="css/common.css">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/service.css">
 	<script src="js/jquery-2.1.4.min.js"></script>
 </head>
 
@@ -23,7 +23,7 @@
             <li><a href="about.html">ABOUT</a></li>
             <li><a href="department.html">SERVICE</a></li>
             <li><a href="javascript:void(0)">CLIENTS</a></li>
-            <li><a href="javascript:void(0)">CONTACT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
         </ul>
         <div class="menu__btnMenu">
             <div class="menu__btnMenu__lines">
@@ -81,6 +81,10 @@
 				departHoverId.removeClass('hover');
 				$(this).addClass('hover');
 			})
+		})
+
+		$('.section-2').click(function(){
+			window.location.href='studio.html';
 		})
 	})
 
