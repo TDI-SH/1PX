@@ -1,11 +1,15 @@
+html,body{
+	width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 #department{
 	width: 1280px;
 	height: 794px;
 	position: relative;
 	overflow: hidden;
-	left: 50%;
-	margin-left: -640px;
 	top: 78px;
+	display: none;
 	section{
 		float: left;
 		position: relative;
@@ -14,61 +18,50 @@
 			&.section-#{$i}{
 				width: 639px;
 				height: 397px;
-				background-image: image-url('service/department/or_#{$i}.jpg',false,false);
+				background-image: image-url('service/main/or_#{$i}.jpg',false,false);
 				background-repeat: no-repeat;
 				cursor: pointer;
-				.btm-txt{
-					width: 130px;
-					height: 40px;
-					position: absolute;
-					bottom: 0;
-					right: 0;
-					font-size: 17px;
-					line-height: 40px;
-					text-align: center;
-					font-style:italic;
-					color: #fff;
-					display: none;
-				}
-				.arrow{
-					width: 14px;
-					height: 28px;
-					background-image: image-url('service/department/arrow.png',false,false);
-					position: absolute;
-					top: 190px;
-					display: none;
-					@if $i == 1 {
-						left: 367px;
-					} @else if $i == 2{
-						left: 367px;
-					} @else if $i == 3 {
-						left: 386px;
-					}@else if $i == 4 {
-						left: 403px;
-					}
-				}
-				.bord{
-					height: 3px;
-					background-color: #fff;
-					position: absolute;
-					top: 217px;
-					display: none;
-					@if $i == 1 {
-						width: 74px;
-						left: 284px;
-					} @else if $i == 2{
-						width: 74px;
-						left: 282px;
-					} @else if $i == 3 {
-						width: 113px;
-						left: 264px;
-					}@else if $i == 4 {
-						width: 149px;
-						left: 244px;
-					}
-				}
+				background-size: cover;
+				background-position: center center;
+				// .arrow{
+				// 	width: 14px;
+				// 	height: 28px;
+				// 	background-image: image-url('service/main/arrow.png',false,false);
+				// 	position: absolute;
+				// 	top: 190px;
+				// 	display: none;
+				// 	@if $i == 1 {
+				// 		left: 367px;
+				// 	} @else if $i == 2{
+				// 		left: 367px;
+				// 	} @else if $i == 3 {
+				// 		left: 386px;
+				// 	}@else if $i == 4 {
+				// 		left: 403px;
+				// 	}
+				// }
+				// .bord{
+				// 	height: 3px;
+				// 	background-color: #fff;
+				// 	position: absolute;
+				// 	top: 217px;
+				// 	display: none;
+				// 	@if $i == 1 {
+				// 		width: 74px;
+				// 		left: 284px;
+				// 	} @else if $i == 2{
+				// 		width: 74px;
+				// 		left: 282px;
+				// 	} @else if $i == 3 {
+				// 		width: 113px;
+				// 		left: 264px;
+				// 	}@else if $i == 4 {
+				// 		width: 149px;
+				// 		left: 244px;
+				// 	}
+				// }
 				&.hover{
-					background-image: image-url('service/department/or_#{$i}_hover.jpg',false,false);
+					background-image: image-url('service/main/or_#{$i}_hover.jpg',false,false);
 					background-repeat: no-repeat;
 					.btm-txt,.arrow,.bord{
 						display: block;
@@ -76,7 +69,7 @@
 				}
 			}
 		}
-		p{
+		p{	
 			width: 100%;
 			height: 100%;
 			text-align: center;
