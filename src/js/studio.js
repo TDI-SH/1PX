@@ -23,7 +23,8 @@
     handleResize(null);  
     
     function enterOurWorks(e)
-    {
+    {        
+        e.preventDefault();
         TweenLite.to(studioIntro,0.5,{alpha:0});
         
         studioOurWorks.style.display='block';
@@ -33,6 +34,7 @@
     
     function leaveOurWorks(e)
     {
+        e.preventDefault();
         TweenLite.set(studioIntro,{alpha:0});
         TweenLite.to(studioIntro,0.5,{alpha:1});       
         
@@ -42,11 +44,16 @@
     var lastCardWidth=-1;
     function handleResize(e)
     {
+        if(e!==null)
+            e.preventDefault();
+        var isMobile=false;
         var windowWidth=window.innerWidth;
+        if(windowWidth<480)
+            isMobile=true;
         if(windowWidth<960)
             windowWidth=960;
         var studioCardWidth=windowWidth*0.68*0.5-10;
-        if(studioCardWidth!==lastCardWidth)
+        if(studioCardWidth!==lastCardWidth&&!isMobile)
         {
             var cards=document.querySelectorAll('.studio__card');
             var num=cards.length;           
@@ -61,6 +68,7 @@
     
     function handleOverCards(e)
     {
+        e.preventDefault();
         var target=e.target;
         if(target.classList.contains('studio__card'))
         {
@@ -72,6 +80,7 @@
     
     function handleOutCards(e)
     {
+        e.preventDefault();
         var target=e.target;
         if(target.classList.contains('studio__card'))
         {
@@ -83,6 +92,7 @@
     
     function handleClickCards(e)
     {
+        e.preventDefault();
         var target=e.target;
         if(target.classList.contains('studio__card'))
         {             
@@ -99,6 +109,8 @@
     
     function closeCardDetails(e)
     {
+        if(e!==null)
+            e.preventDefault();
         cardDetails.style.display='none';
         
         Array.prototype.forEach.call(document.querySelectorAll('.studio__card__detail'), function(el, i){
@@ -111,7 +123,7 @@
     function addClickEvent(dom,handler)
     {
         dom.addEventListener('click',handler,false);
-        dom.addEventListener('touchstart',handler,false);        
+        dom.addEventListener('touchend',handler,false);        
     }
     
     

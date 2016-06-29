@@ -23,6 +23,7 @@ html
 }
 .studio__left
 {
+    position: relative;
     width: 32%;    
     height: 100%;
     background-color: rgba(28, 101, 176, 0.98);
@@ -46,17 +47,18 @@ html
 .studio__left>hr
 {
     width: 75px;
-    height: 3px;
+    height: 0;
     border: none;
     border-top: solid 3px #ffffff;
-    margin: 0 4.5rem 4.5rem 0;    
+    margin: 0;
+    padding: 0; 
 }
 .studio__left>a
 {
     display: block;
     color: #ffda06;
-    font-size: 1.9rem;        
-    padding: 2rem 0;
+    font-size: 1.9rem;
+    padding-top: 6.5rem;  
     cursor: pointer; 
 }
 /*** studio 结束 ***/
@@ -158,7 +160,7 @@ html
 /*** studio__card__detail 开始***/
 .studio__card__details
 {
-    display: none;
+    display: none;      
 }
 .studio__card__detail
 {
@@ -170,6 +172,7 @@ html
 }
 .studio__card__detail__headimg
 {
+    position: relative;
     height: 375px;
     overflow: hidden;
 }
@@ -218,6 +221,90 @@ html
         left: 1rem;
     }             
 }
+
+@media screen and (max-width:480px)
+{
+    html,body
+    {        
+        min-width: auto;
+    }
+    .studio
+    {
+        top: 40px;
+        height: calc(100% - 40px);    
+    }
+    .studio__left
+    {
+        width: 100%;    
+        height: 50%;
+        padding:0 2rem;    
+    }
+    .studio__left>h2
+    {
+        padding-top: 5rem;
+        padding-bottom: 1rem;
+        font-size: 4.8rem;
+    }
+    .studio__left>p
+    {
+        padding-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+    .studio__left>hr
+    {
+        width: 40px;
+        height: 0;
+        border-top: solid 2px #ffffff;
+        
+    }
+    .studio__left>a
+    {
+        font-size: 1.5rem;        
+        padding: 1rem 0;
+    }
+    .studio__btnLeft
+    {
+        position: absolute;
+        left: auto;
+        right: 2rem;        
+    }
+    
+    .studio__right
+    {
+        left: 0;
+        top:50%;
+        width: 100%;
+        height: 50%;    
+    }
+    .studio__cards
+    {
+        overflow-y: visible;   
+    }    
+    .studio__card
+    {
+        width: 100%;
+        height: 100%;       
+    }
+    .studio__card__detail
+    {        
+        height: auto;
+        overflow-y: visible;
+    }
+    .studio__card__detail__headimg
+    {
+        height: 150px;
+    }              
+}
+
+@media screen and (max-width:320px)
+{
+    .studio__left>h2
+    {
+        padding-top: 1rem;
+    }    
+}
+
+
 
 
 
