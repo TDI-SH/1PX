@@ -17,7 +17,8 @@
     addClickEvent(btnCloseDetail,closeCardDetails);
     studioRight.addEventListener('mouseover',handleOverCards,false);
     studioRight.addEventListener('mouseout',handleOutCards,false);
-    addClickEvent(studioRight,handleClickCards);   
+    //addClickEvent(studioRight,handleClickCards);
+    studioRight.addEventListener('click',handleClickCards,false);
     window.addEventListener('resize',handleResize,false);
     
     handleResize(null);  
@@ -42,14 +43,16 @@
     }
     
     var lastCardWidth=-1;
+    var isMobile;
     function handleResize(e)
     {
         if(e!==null)
-            e.preventDefault();
-        var isMobile=false;
+            e.preventDefault();        
         var windowWidth=window.innerWidth;
         if(windowWidth<480)
             isMobile=true;
+        else
+            isMobile=false;
         if(windowWidth<960)
             windowWidth=960;
         var studioCardWidth=windowWidth*0.68*0.5-10;
@@ -63,7 +66,9 @@
                 card.style.width=card.style.height=studioCardWidth+'px';
             } 
             lastCardWidth=studioCardWidth;       
-        }                      
+        }  
+        
+        console.log(isMobile,windowWidth);                    
     }
     
     function handleOverCards(e)
@@ -103,7 +108,14 @@
              cardDetails.style.display='block';
              
              var cardDetail=document.querySelectorAll('.studio__card__detail')[index];
-                 cardDetail.style.display='block';            
+                 cardDetail.style.display='block';
+             
+              
+             if(isMobile)//弹出窗口时，禁止页面滚动
+                document.body.classList.add('noscroll');
+                
+                
+             console.log(isMobile);        
         }
     }
     
@@ -115,7 +127,10 @@
         
         Array.prototype.forEach.call(document.querySelectorAll('.studio__card__detail'), function(el, i){
             el.style.display='none';
-        });      
+        });
+        
+        
+        document.body.classList.remove('noscroll');      
     }
     
     
