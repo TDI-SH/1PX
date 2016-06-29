@@ -26,23 +26,24 @@ html
     width: 32%;    
     height: 100%;
     background-color: rgba(28, 101, 176, 0.98);
-    padding:0 4.5rem;
     box-sizing: border-box;
+    padding:0 4.5rem;    
+    overflow: hidden;
 }
-h2
+.studio__left>h2
 {
     padding-top: 13rem;
     padding-bottom: 4.5rem;
     font-size: 9.6rem;
     font-weight: 100;      
 }
-p
+.studio__left>p
 {
     padding-bottom: 3.2rem;
     font-size: 1.8rem;
     font-weight:  300;
 }
-hr
+.studio__left>hr
 {
     width: 75px;
     height: 3px;
@@ -50,13 +51,13 @@ hr
     border-top: solid 3px #ffffff;
     margin: 0 4.5rem 4.5rem 0;    
 }
-a
+.studio__left>a
 {
     display: block;
     color: #ffda06;
-    font-size: 1.9rem;
-    cursor: pointer;    
-    padding: 2rem 0;    
+    font-size: 1.9rem;        
+    padding: 2rem 0;
+    cursor: pointer; 
 }
 /*** studio 结束 ***/
 
@@ -85,10 +86,14 @@ a
     left: 32%;
     top:0;
     width: 68%;
+    height: 100%;    
+}
+.studio__cards
+{
+    position: absolute;   
     height: 100%;
     background-color: #1c65b0;
-    overflow-y: scroll;
-    
+    overflow-y: auto;    
 }
 .studio__card
 {
@@ -96,6 +101,17 @@ a
     float: left;
     width: calc(50% - 10px);
     overflow: hidden;
+    cursor: pointer;
+}
+.studio__card:after/*important for mouseover event handler*/
+{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0);
+    width: 100%;
+    height: 100%;          
 }
 .studio__card>img
 {
@@ -103,17 +119,27 @@ a
 }
 .studio__card_over
 {
+    opacity: 0;
     position: absolute;
     left: 3%;
     top: 3%;
     width: 94%;
     height: 94%;
     background-color: rgba(54,127,202,0.77);
+    
+    -webkit-transition: opacity 0.28s cubic-bezier(.25,.78,.1,.98);
+    -moz-transition: opacity 0.28s cubic-bezier(.25,.78,.1,.98);
+    -o-transition: opacity 0.28s cubic-bezier(.25,.78,.1,.98);
+    transition: opacity 0.28s cubic-bezier(.25,.78,.1,.98);
+}
+.studio__card_over_show
+{
+    opacity: 1;
 }
 .studio__card_over>p
 {
-    padding: 0;
     position: absolute;
+    font-size: 1.8rem;
     right: 60px;
     bottom: 20px;
 }
@@ -127,9 +153,55 @@ a
     background: url('../images/service/studio/btnRight.png') no-repeat;
     cursor: pointer;     
 }
-
-
 /*** studioworks 结束 ***/
+
+/*** studio__card__detail 开始***/
+.studio__card__details
+{
+    display: none;
+}
+.studio__card__detail
+{
+    display: none;
+    position: absolute;
+    height: 100%;
+    background-color: #256fbb;
+    overflow-y: auto;
+}
+.studio__card__detail__headimg
+{
+    height: 375px;
+    overflow: hidden;
+}
+.studio__card__detail__headimg>img
+{
+    width: 100%;
+}
+.studio__card__detail>h3
+{
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 5.6rem 5rem 3.6rem 5rem;
+}
+.studio__card__detail>p
+{
+    font-size: 1.8rem;
+    font-weight: 300;
+    padding: 0 5rem 3rem 5rem;
+}
+.studio__card__detail__btnClose
+{
+    position: absolute;
+    top: 20px;    
+    right: 20px;
+    width: 29px;
+    height: 29px;
+    padding: 10px;    
+    background: url('../images/service/studio/btnClose.png') center center no-repeat;
+    cursor: pointer;     
+}
+/*** studio__card__detail 结束***/
+
 
 @media screen and (max-width:1280px)
 {
@@ -137,7 +209,7 @@ a
     {
         padding:0 1rem;
     }
-    h2
+    .studio__left>h2
     {
         font-size: 8rem;
     }
