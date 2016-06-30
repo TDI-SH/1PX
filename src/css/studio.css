@@ -61,6 +61,7 @@ html
 {
     display: block;
     color: #ffda06;
+    text-decoration: none;
     font-size: 1.9rem;
     padding-top: 6.5rem;  
     cursor: pointer; 
@@ -284,26 +285,39 @@ html
     {
         overflow-y: visible;   
     }
-    
+    .studio__card
+    {
+        width: 100%;
+        height: 100%;       
+    }
+    .studio__card_over
+    {
+        opacity: 1;
+        background-color: transparent;
+    }
+       
     .studio__card__details
     {
         position: fixed;
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: #ffda06;
+        background-color: #256fbb;
         z-index: 7891;
-    }      
-    .studio__card
-    {
-        width: 100%;
-        height: 100%;       
-    }
-            
+    }               
     .studio__card__detail__headimg
     {
         height: 150px;
-    }              
+    }
+    
+    .studio__card__detail>h3
+    {
+        padding: 3rem 2rem 2rem 2rem;
+    }
+    .studio__card__detail>p
+    {
+        padding: 0 2rem 1.5rem 2rem;
+    }             
 }
 
 @media screen and (max-width:320px)

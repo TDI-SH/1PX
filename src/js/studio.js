@@ -17,15 +17,14 @@
     addClickEvent(btnCloseDetail,closeCardDetails);
     studioRight.addEventListener('mouseover',handleOverCards,false);
     studioRight.addEventListener('mouseout',handleOutCards,false);
-    //addClickEvent(studioRight,handleClickCards);
     studioRight.addEventListener('click',handleClickCards,false);
     window.addEventListener('resize',handleResize,false);
     
-    handleResize(null);  
+    handleResize(null);
     
     function enterOurWorks(e)
     {        
-        e.preventDefault();
+        //e.preventDefault();
         TweenLite.to(studioIntro,0.5,{alpha:0});
         
         studioOurWorks.style.display='block';
@@ -66,9 +65,7 @@
                 card.style.width=card.style.height=studioCardWidth+'px';
             } 
             lastCardWidth=studioCardWidth;       
-        }  
-        
-        console.log(isMobile,windowWidth);                    
+        }        
     }
     
     function handleOverCards(e)
@@ -112,10 +109,7 @@
              
               
              if(isMobile)//弹出窗口时，禁止页面滚动
-                document.body.classList.add('noscroll');
-                
-                
-             console.log(isMobile);        
+                document.body.classList.add('noscroll');               
         }
     }
     
