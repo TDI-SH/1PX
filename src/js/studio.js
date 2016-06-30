@@ -2,7 +2,8 @@
 {
     console.log('studio.js start');    
     
-    var studioRight=document.querySelector('.studio__right');   
+    var studioRight=document.querySelector('.studio__right');
+    var cardsContainer=document.querySelector('.studio__cards');       
     var cardDetails=document.querySelector('.studio__card__details');
     
     var btnOurWorks=document.querySelector('.studio__intro__ourworks');
@@ -16,21 +17,40 @@
     addClickEvent(btnOurWorks,enterOurWorks);
     addClickEvent(btnCloseDetail,closeCardDetails);
     studioRight.addEventListener('mouseover',handleOverCards,false);
+    studioRight.addEventListener('touchstart',handleOverCards,false);
     studioRight.addEventListener('mouseout',handleOutCards,false);
+    studioRight.addEventListener('touchend',handleOutCards,false);     
     studioRight.addEventListener('click',handleClickCards,false);
     window.addEventListener('resize',handleResize,false);
     
     handleResize(null);
+    processLocation();
+    
+    function processLocation()
+    {
+        var location=window.location;
+        var hash=location.hash;
+        if(hash==='#works')
+        {
+            tweenInWorks(0);            
+        }       
+    }
     
     function enterOurWorks(e)
     {        
-        //e.preventDefault();
-        TweenLite.to(studioIntro,0.5,{alpha:0});
+        e.preventDefault();
+        tweenInWorks(0.5);                
+    }
+    
+    function tweenInWorks(duration)
+    {        
+        TweenLite.to(studioIntro,duration,{alpha:0});
         
         studioOurWorks.style.display='block';
         TweenLite.set(studioOurWorks,{alpha:0});
-        TweenLite.to(studioOurWorks,0.5,{alpha:1});                
+        TweenLite.to(studioOurWorks,duration,{alpha:1});                   
     }
+    
     
     function leaveOurWorks(e)
     {
@@ -38,39 +58,41 @@
         TweenLite.set(studioIntro,{alpha:0});
         TweenLite.to(studioIntro,0.5,{alpha:1});       
         
-        TweenLite.to(studioOurWorks,0.5,{alpha:0,onComplete:function(){studioOurWorks.style.display='none';closeCardDetails(null)}});        
+        
+        TweenLite.to(studioOurWorks,0.5,{alpha:0,onComplete:function(){studioOurWorks.style.display='none';closeCardDetails(null);}});        
     }
     
-    var lastCardWidth=-1;
     var isMobile;
     function handleResize(e)
     {
         if(e!==null)
-            e.preventDefault();        
+            e.preventDefault();
+                 
         var windowWidth=window.innerWidth;
-        if(windowWidth<480)
+        if(windowWidth<=480)
             isMobile=true;
         else
-            isMobile=false;
-        if(windowWidth<960)
-            windowWidth=960;
-        var studioCardWidth=windowWidth*0.68*0.5-10;
-        if(studioCardWidth!==lastCardWidth&&!isMobile)
         {
+            isMobile=false;
+            
+            if(windowWidth<960)
+                windowWidth=960;
+            var studioCardWidth=windowWidth*0.68*0.5-10;
             var cards=document.querySelectorAll('.studio__card');
             var num=cards.length;           
             for(var i=0;i<num;i++)
             {
                 var card=cards[i];
                 card.style.width=card.style.height=studioCardWidth+'px';
-            } 
-            lastCardWidth=studioCardWidth;       
-        }        
+            }
+        }              
     }
     
     function handleOverCards(e)
     {
-        e.preventDefault();
+        console.log(e.type);
+        if(e.type!=='touchstart')//mobile端不要禁止studioRight上的touchstart行为
+            e.preventDefault();
         var target=e.target;
         if(target.classList.contains('studio__card'))
         {
@@ -82,7 +104,9 @@
     
     function handleOutCards(e)
     {
-        e.preventDefault();
+        console.log(e.type);
+        if(e.type!='touchend')//mobile端不要禁止studioRight上的touchend行为
+            e.preventDefault();
         var target=e.target;
         if(target.classList.contains('studio__card'))
         {
@@ -94,10 +118,13 @@
     
     function handleClickCards(e)
     {
-        e.preventDefault();
+        console.log(e.type)
+        //mobile端touchstart和mouseover都会触发卡片的over效果，所以强制调用一次handleOutCards,清除over效果
+        handleOutCards(e);
+                
         var target=e.target;
         if(target.classList.contains('studio__card'))
-        {             
+        {   
              var card=target;
              var cards=card.parentNode.querySelectorAll('.studio__card');
              var index=Array.prototype.indexOf.call(cards, card);//获得子div在父div中的索引
