@@ -38,7 +38,7 @@
     
     function enterOurWorks(e)
     {        
-        e.preventDefault();
+        //e.preventDefault();//需要改变window.location这个默认样式
         tweenInWorks(0.5);                
     }
     
@@ -54,7 +54,7 @@
     
     function leaveOurWorks(e)
     {
-        e.preventDefault();
+        //e.preventDefault();//需要改变window.location这个默认样式
         TweenLite.set(studioIntro,{alpha:0});
         TweenLite.to(studioIntro,0.5,{alpha:1});       
         
