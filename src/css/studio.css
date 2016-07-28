@@ -40,7 +40,8 @@ html
     padding-top: 13rem;
     padding-bottom: 4.5rem;
     font-size: 9.6rem;
-    font-weight: 100;      
+    font-weight: 100;
+    word-break: break-all;    
 }
 .studio__left>p
 {
