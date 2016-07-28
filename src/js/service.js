@@ -13,6 +13,14 @@
 			})
 		})
 
+		$('.section-4').click(function(){
+			window.location.href='transcreation.html';
+		})
+
+		$('.section-3').click(function(){
+			window.location.href='broadcast.html';
+		})
+
 		$('.section-2').click(function(){
 			window.location.href='studio.html';
 		})
@@ -20,6 +28,8 @@
 		$('.section-1').click(function(){
 			window.location.href='digital.html';
 		})
+
+		
 
 
 	    resize();
