@@ -39,6 +39,7 @@
     function enterOurWorks(e)
     {        
         //e.preventDefault();//需要改变window.location这个默认样式
+        console.log('want got to works!');
         tweenInWorks(0.5);                
     }
     
@@ -104,7 +105,7 @@
     
     function handleOutCards(e)
     {
-        console.log(e.type);
+        console.log(e.target,e.type);
         if(e.type!='touchend')//mobile端不要禁止studioRight上的touchend行为
             e.preventDefault();
         var target=e.target;
@@ -118,7 +119,7 @@
     
     function handleClickCards(e)
     {
-        console.log(e.type)
+        console.log(e.target,e.type)
         //mobile端touchstart和mouseover都会触发卡片的over效果，所以强制调用一次handleOutCards,清除over效果
         handleOutCards(e);
                 
