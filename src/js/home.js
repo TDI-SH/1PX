@@ -27,12 +27,16 @@
         var winWidth = $(window).width();
         var menuHeight = $('.header').height();
         var contHeight = $('.home').height();
+
+
+        $('#homeWrapper').css({'height':winHeight-78})
         
         if(winWidth>480){
             var _sx=winWidth/1280;
-            var _sy=winHeight/1080;
+            var _sy=winHeight/1180;
             _smax=(_sx<=_sy)?_sx:_sy;
-            $('.home').css({
+            contHeight = contHeight*_smax;
+             $('.home').css({
                 '-webkit-transform-origin':'50% 0',
                 '-ms-transform-origin':'50% 0',
                 'transform-origin':'50% 0',
@@ -42,14 +46,13 @@
                 '-ms-transform': 'scale('+_smax+')',
                 'transform': 'scale('+_smax+')'
             })
-            contHeight = contHeight*_smax;
-        }
+            
 
-        var topN = winHeight-contHeight-menuHeight;
-        if(topN<=0){
-            $('.home').css({'top':menuHeight})
+            $('.home').css({'margin-top':contHeight/-2});
         }else{
-            $('.home').css({'top':topN/2+menuHeight})
+            _smax=1;
+            $('.home').css({'margin-top':0,'top':menuHeight});
+            $('html,body').css({'overflow':'auto'})
         }
     }
 
