@@ -19,8 +19,9 @@ html
     position: absolute;
     top: 78px;
     width: 100%;
-    height: calc(100% - 78px);    
-    background: url('../images/service/studio/bg.jpg') center center no-repeat;
+    height: calc(100% - 78px);
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
     font-family: Helvetica;
     color: #ffffff;
@@ -235,6 +236,8 @@ html
         left: 1rem;
     }             
 }
+
+
 
 @media screen and (max-width:480px)
 {
