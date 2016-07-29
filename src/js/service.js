@@ -76,7 +76,7 @@
 					if(bgAni){
 						TweenMax.killAll();
 					}
-					bgAni = TweenMax.to(hoverBg,1,{'width':oriW*1.2,ease:Linear.easeNone,onUpdate:function(){
+					bgAni = TweenMax.to(hoverBg,0.3,{'width':oriW*1.03,ease:Linear.easeNone,onUpdate:function(){
 						hoverBg.css({
 							'height':hoverBg.width()/640*397,
 							'margin-left':hoverBg.width()/-2,
