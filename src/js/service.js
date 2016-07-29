@@ -66,23 +66,11 @@
 					$(this).find('img').eq(0).show();
 					$(this).find('img').eq(1).hide();
 
-					hoverBg.css({
-						'width':oriW,
-						'height':oriH,
-						'margin-left':oriW/-2,
-						'margin-top':oriH/-2
-					})
-
 					if(bgAni){
 						TweenMax.killAll();
 					}
-					bgAni = TweenMax.to(hoverBg,0.3,{'width':oriW*1.03,ease:Linear.easeNone,onUpdate:function(){
-						hoverBg.css({
-							'height':hoverBg.width()/640*397,
-							'margin-left':hoverBg.width()/-2,
-							'margin-top':hoverBg.height()/-2
-						})
-					}})
+					TweenMax.set(hoverBg,{scale:1})
+					bgAni = TweenMax.to(hoverBg,5,{scale:1.1})
 				})
 			})
 		}else{
