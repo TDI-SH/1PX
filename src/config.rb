@@ -39,7 +39,7 @@ end
 http_path = "/"
 css_dir = "css"
 sass_dir = "sass"
-images_dir = "images"
+images_dir = "images/service/main"
 javascripts_dir = "javascripts"
 
 

@@ -18,54 +18,25 @@ html,body{
 			&.section-#{$i}{
 				width: 639px;
 				height: 397px;
-				background-image: image-url('service/main/or_#{$i}.jpg',false,false);
-				background-repeat: no-repeat;
 				cursor: pointer;
-				background-size: cover;
-				background-position: center center;
-				// .arrow{
-				// 	width: 14px;
-				// 	height: 28px;
-				// 	background-image: image-url('service/main/arrow.png',false,false);
-				// 	position: absolute;
-				// 	top: 190px;
-				// 	display: none;
-				// 	@if $i == 1 {
-				// 		left: 367px;
-				// 	} @else if $i == 2{
-				// 		left: 367px;
-				// 	} @else if $i == 3 {
-				// 		left: 386px;
-				// 	}@else if $i == 4 {
-				// 		left: 403px;
-				// 	}
-				// }
-				// .bord{
-				// 	height: 3px;
-				// 	background-color: #fff;
-				// 	position: absolute;
-				// 	top: 217px;
-				// 	display: none;
-				// 	@if $i == 1 {
-				// 		width: 74px;
-				// 		left: 284px;
-				// 	} @else if $i == 2{
-				// 		width: 74px;
-				// 		left: 282px;
-				// 	} @else if $i == 3 {
-				// 		width: 113px;
-				// 		left: 264px;
-				// 	}@else if $i == 4 {
-				// 		width: 149px;
-				// 		left: 244px;
-				// 	}
-				// }
-				&.hover{
-					background-image: image-url('service/main/or_#{$i}_hover.jpg',false,false);
-					background-repeat: no-repeat;
-					.btm-txt,.arrow,.bord{
-						display: block;
+				overflow: hidden;
+				.c-txt-#{$i}{
+					@include txt-sprite('TXT-#{$i}-1');
+					position: absolute;
+					z-index: 2;
+					top: 50%;
+					left: 50%;
+					margin-top: txt-sprite-height('TXT-#{$i}-1')/-2;
+					margin-left: txt-sprite-width('TXT-#{$i}-1')/-2;
+					&.txtHover{
+						@include txt-sprite('TXT-#{$i}-2');
 					}
+				}
+				img{
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					z-index: 1;
 				}
 			}
 		}
@@ -98,36 +69,6 @@ html,body{
 	    		&.section-#{$i}{
 	    			width: 100vw;
     				height: 57vw;
-    				.arrow{
-						@if $i == 1 {
-							top: 25.5vw;
-							left: 60vw;
-						} @else if $i == 2{
-							top: 25.5vw;
-							left: 60vw;
-						} @else if $i == 3 {
-							top: 25.5vw;
-							left: 65vw;
-						}@else if $i == 4 {
-							top: 25.5vw;
-							left: 70vw;
-						}
-    				}
-    				.bord{
-						@if $i == 1 {
-							top: 32vw;
-							left: 41vw;
-						} @else if $i == 2{
-							top: 32vw;
-							left: 41vw;
-						} @else if $i == 3 {
-							top: 32vw;
-							left: 36.5vw;
-						}@else if $i == 4 {
-							left: 32.5vw;
-							top: 32vw;
-						}
-    				}
 	    		}
 	    	}
 	    	p{
