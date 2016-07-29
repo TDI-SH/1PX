@@ -36,7 +36,9 @@
             var _sy=winHeight/1180;
             _smax=(_sx<=_sy)?_sx:_sy;
             contHeight = contHeight*_smax;
-             $('.home').css({
+            $('.home').css({
+                'top':'50%',
+                'margin-top':contHeight/-2,
                 '-webkit-transform-origin':'50% 0',
                 '-ms-transform-origin':'50% 0',
                 'transform-origin':'50% 0',
@@ -46,12 +48,21 @@
                 '-ms-transform': 'scale('+_smax+')',
                 'transform': 'scale('+_smax+')'
             })
-            
-
-            $('.home').css({'margin-top':contHeight/-2});
+            $('html,body').css({'overflow':'hidden'})
         }else{
             _smax=1;
-            $('.home').css({'margin-top':0,'top':menuHeight});
+            $('.home').css({
+                'top':menuHeight,
+                'margin-top':'0',
+                '-webkit-transform-origin':'50% 0',
+                '-ms-transform-origin':'50% 0',
+                'transform-origin':'50% 0',
+                '-webkit-transform':'scale('+_smax+')',
+
+
+                '-ms-transform': 'scale('+_smax+')',
+                'transform': 'scale('+_smax+')'
+            })
             $('html,body').css({'overflow':'auto'})
         }
     }
