@@ -28,6 +28,7 @@
     var isPc;
     var maxX;
     var id;    
+
             
     handleResize(null);
     sateRightLeft(id);   

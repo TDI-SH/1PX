@@ -38,6 +38,7 @@ html,body
     height: 60%;
     left: 0px;
     top: 20%;
+    font-size: 19.5vw;/*加载显示错位*/
     /*border: solid #00ff00 1px;*/
 }
 .about__card
@@ -320,6 +321,8 @@ html,body
     }
     .about__cards
     {
+        font-size: 100vw;/*below two lines for 加载显示错位*/
+        left: 15vw;
         width: 70%;
     }
     .about__card
