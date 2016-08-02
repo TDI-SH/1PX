@@ -3,7 +3,6 @@ html,body
     position: relative;
     width: 100%;
     height: 100%;
-    min-width: 960px;
 }
 html
 {
@@ -35,14 +34,14 @@ html
     box-sizing: border-box;
     padding:0 1rem;    
     overflow: hidden;
+    
+    
 }
 .studio__left>h2
 {
     padding-top: 13rem;
     padding-bottom: 4.5rem;
-    font-size: 4.6rem;/*the smallest font-size for 960 width*/
     font-weight: 100;
-    word-break: break-all;    
 }
 .studio__left>p
 {
@@ -220,13 +219,8 @@ html
 }
 /*** studio__card__detail 结束***/
 
-/*** pc宽度 **/
-@media screen and (min-width:1920px)
+@media screen and (min-width:1280px)
 {
-    .studio__left>h2
-    {
-        font-size: 8.2rem;
-    } 
     .studio__left
     {
         padding:0 4.5rem;    
@@ -236,41 +230,7 @@ html
         left: 4.5rem;        
     }
 }
-@media screen and (max-width:1440px)
-{
-    .studio__left>h2
-    {
-        font-size: 7rem;
-    }    
-}
 
-@media screen and (max-width:1366px)
-{
-    .studio__left>h2
-    {
-        font-size: 6.5rem;
-    }    
-}
-
-@media screen and (max-width:1024px)
-{
-    .studio__left>h2
-    {
-        font-size: 5rem;
-    }    
-}
-
-@media screen and (max-width:960px)
-{
-    .studio__left>h2
-    {
-        font-size: 4.6rem;
-    }    
-}
-
-
-
-/*** pc高度 ***/
 @media screen and (max-height:800px)
 {
     .studio__left>h2
@@ -291,6 +251,7 @@ html
         top: 1rem;        
     }
 }
+
 
 @media screen and (max-width:480px)
 {
@@ -321,12 +282,11 @@ html
         height: 100%;
         background-color:rgba(0,0,0,0);
         z-index: -1;/*:after should below .studio__left this can stop click .studio__right's cards*/
-}
+    }
     .studio__left>h2
     {
         padding-top: 2rem;
         padding-bottom: 1rem;
-        font-size: 4.2rem;
     }
     .studio__left>p
     {
@@ -362,11 +322,6 @@ html
     .studio__cards
     {
         overflow-y: visible;   
-    }
-    .studio__card
-    {
-        width: 100%;
-        height: 100%;       
     }
     
     .studio__card__details
