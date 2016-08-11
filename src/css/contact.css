@@ -4,7 +4,13 @@ html,body{
     font-size: 10px;
     overflow: hidden;
 }
-
+.clearfix{
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    clear: both;
+}
 p{
     padding: 0;
     margin: 0;
@@ -38,7 +44,7 @@ p{
 }
 #contactus .sub-t{
     position: absolute;
-    top: 40%;
+    top: 41%;
     left: 50%;
     z-index: 10;
     font-size: 1.5rem;
@@ -57,7 +63,7 @@ p{
     position: absolute;
     z-index: 10;
     top: 49%;
-    left: 47%;
+    left: 46.5%;
 }
 #contactus .location img{
     display: block;
@@ -72,7 +78,7 @@ p{
     position: absolute;
     z-index: 10;
     top: 59%;
-    left: 47%;
+    left: 46.5%;
 }
 #contactus .phone img{
     display: block;
@@ -87,12 +93,12 @@ p{
     position: absolute;
     z-index: 10;
     top: 69%;
-    left: 47%;
+    left: 46.5%;
 }
 #contactus .button{
     position: absolute;
     z-index: 10;
-    top: 67.5%;
+    top: 68%;
     left: 50.5%;
 }
 
@@ -127,46 +133,66 @@ p{
         position: absolute;
         z-index: 10;
         top: 29%;
-        left: 12%;
+        left: 10%;
     }
     #contactus .location img{
+        width: 30px;
+        height: 30px;
         display: block;
         float: left;
     }
     #contactus .location .txt{
         float: left;
         font-size: 1rem;
-        margin-left: 1.7rem
+        margin-left: 1rem;
+        word-break: break-all;
     }
     #contactus .phone{
         position: absolute;
         z-index: 10;
         top: 39%;
-        left: 12%;
+        left: 10%;
     }
     #contactus .phone img{
+        width: 30px;
+        height: 30px;
         display: block;
         float: left;
     }
     #contactus .phone .txt{
         float: left;
         font-size: 1rem;
-        margin-left: 1.7rem
+        margin-left: 1rem;
     }
     #contactus .mail{
+        width: 30px;
+        height: 30px;
         position: absolute;
         z-index: 10;
         top: 49%;
-        left: 12%;
+        left: 10%;
     }
     #contactus .button{
+        width: 139px;
+        height: 37px;
         position: absolute;
         z-index: 10;
-        top: 47.5%;
+        top: 48%;
         left: 21.5%;
     }
 }
-
+@media screen and (max-width:320px){
+    #contactus .title{
+        font-size: 3.5rem;
+    }
+    #contactus .sub-t{
+        font-size: 1.3rem;
+    }
+    #contactus .location .txt,#contactus .phone .txt{
+        font-size: 0.9rem;
+        margin-left: 1.5rem;
+    }
+}
 
 
 

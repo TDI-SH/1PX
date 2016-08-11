@@ -25,7 +25,6 @@
                 'height':winHeight-78
             });
 
-
             _bgPic.css({
                 'width':1280*_smax,
                 'height':655*_smax,
@@ -33,8 +32,8 @@
                 'margin-left':-640*_smax
             })
             _iconl.css({
-                'width':22*_smax,
-                'height':31*_smax
+                'width':30*_smax,
+                'height':30*_smax
             })
             _iconp.css({
                 'width':30*_smax,
@@ -42,7 +41,7 @@
             })
             _iconm.css({
                 'width':30*_smax,
-                'height':19*_smax
+                'height':30*_smax
             })
             _iconb.css({
                 'width':139*_smax,
