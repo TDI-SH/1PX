@@ -184,13 +184,21 @@ html,body{
 {
     width: 784px;
     height: 784px;
-    border-radius: 392px;
     background-color: #3da3dc;
     overflow: hidden;
     margin: 0 auto;
     margin-top: 30px;
     position: relative;
+    border-radius: 392px;
+    -webkit-border-radius: 392px;
+    -moz-border-radius: 392px;
+    -ms-border-radius: 392px;
+    -o-border-radius: 392px;
+    transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
     -webkit-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
 }
 .home__map__wrapper
 {
