@@ -190,15 +190,9 @@ html,body{
     margin-top: 30px;
     position: relative;
     border-radius: 392px;
-    -webkit-border-radius: 392px;
-    -moz-border-radius: 392px;
-    -ms-border-radius: 392px;
-    -o-border-radius: 392px;
-    transform:rotate(0deg);
-    -ms-transform:rotate(0deg);
-    -moz-transform:rotate(0deg);
-    -webkit-transform:rotate(0deg);
-    -o-transform:rotate(0deg);
+    z-index: 100;/*try to fix the round radius mask bug */
+   
+   
 }
 .home__map__wrapper
 {
