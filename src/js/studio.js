@@ -74,7 +74,8 @@
             e.preventDefault();
                  
         var windowWidth=window.innerWidth;
-        if(windowWidth<=480)
+        var windowHeight=window.innerHeight;
+        if(windowWidth<=480||windowHeight<=480)
         {
             isMobile=true;
             Array.prototype.forEach.call(document.querySelectorAll('.studio__card'), function(el, i){
@@ -98,7 +99,7 @@
 
         while(finding)
         {
-            
+            strEl.style.display='inline-block';            
             var fontSize=getNumber(getComputedStyle(strEl).fontSize);            
             var strElWidth=getNumber(getComputedStyle(strEl).width);        
             var offsetWidth=introWidth-padding*2-strElWidth;
@@ -114,7 +115,8 @@
             }
             else
             {                
-                finding=false;  
+                finding=false;
+                strEl.style.display='none';
                 fontSize=fontSize>72?72:fontSize;              
                 Array.prototype.forEach.call(document.querySelectorAll('.studio__left>h2'), function(el, i){
                     el.style.fontSize=fontSize+'px';

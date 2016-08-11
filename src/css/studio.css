@@ -252,17 +252,13 @@ html
     }
 }
 
-
-@media screen and (max-width:480px)
+/*** 宽度小于等于480 或 高度小于等于480 切换到手机模式 ***/
+@media screen and (max-width:480px),screen and (max-height:480px)
 {
-    html,body
-    {        
-        min-width: auto;
-    }
     .studio
     {
         top: 40px;
-        height: calc(100% - 40px);    
+        height: calc(100% - 40px);
     }
     .studio__left
     {
@@ -345,6 +341,16 @@ html
     {
         padding: 0 2rem 1.5rem 2rem;
     }             
+}
+
+/*** 高度小于等于480 但宽度仍然大于 480 ***/
+@media screen and (max-height:480px) and (min-width:481px)
+{
+    .studio
+    {
+        top: 78px;
+        height: calc(100% - 78px);
+    }    
 }
 
 
