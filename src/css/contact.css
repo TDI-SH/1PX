@@ -103,6 +103,9 @@ p{
 }
 
 @media screen and (max-width:480px){
+    #contactus{
+        top: 40px;
+    }
     #contactus .title{
         width: 60%;
         position: absolute;
@@ -182,6 +185,9 @@ p{
     }
 }
 @media screen and (max-width:320px){
+    #contactus{
+        top: 40px;
+    }
     #contactus .title{
         font-size: 3.5rem;
     }
